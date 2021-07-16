@@ -7,6 +7,8 @@ RUN Rscript --vanilla -e \
     repos='https://cloud.r-project.org')"
 RUN Rscript --vanilla -e \
     "remotes::install_github('pvermees/geoplotr@beta')"
+RUN Rscript --vanilla -e \
+    "remotes::install_github('tim-band/GeoplotRgui@shinylight')"
 
 COPY DESCRIPTION /app/DESCRIPTION
 COPY NAMESPACE /app/NAMESPACE
