@@ -9,6 +9,14 @@
     "TAS": {
       "name": "TAS",
       "help": "Total Alkali Silica diagram"
+    },
+    "AFM": {
+      "name": "AFM",
+      "help": "A-F-M diagram"
+    },
+    "ATM": {
+      "name": "ATM",
+      "help": "A-T-M diagram"
     }
   },
   "params" : {
@@ -52,9 +60,13 @@
       "name": "Ternary",
       "help": "Ternary or logratio plot"
     },
-    "radial": {
-      "name": "Radial",
-      "help": "Add Bowen-Fenner indices (only for Logratio plot)"
+    "twoStage": {
+      "name": "Two stage",
+      "help": "Applies the two-stage magma evolution model of Vermeesch and Pease (2021), rather than the single-stage model"
+    },
+    "kde": {
+      "name": "KDE",
+      "help": "Adds a kernel density estimate of the Bowen-Fenner indices on a radial scale (only for Logratio plot)"
     },
     "boxType": {
       "name": "Box type",
@@ -66,26 +78,14 @@
     },
     "vermeeschPease": {
       "name": "Decision",
-      "help": "Adds Vermeesch and Pease's two-stage decision boundary between the calc-alkaline and tholeiitic magma series to the plot (only for Ternary plot)"
-    },
-    "decisionLineType": {
-      "name": "Line type",
-      "help": "Line type of the decision boundary"
-    },
-    "decisionLineWidth": {
-      "name": "Line width",
-      "help": "Line width of the decision boundary"
-    },
-    "decisionLineColour": {
-      "name": "Colour",
-      "help": "Colour of the decision boundary"
+      "help": "Adds the decision boundary between the tholeiitic and calc-alkaline magma series to the plot (only for Ternary plot)"
     }
   },
   "optiongroups": {
     "plot": {
       "@title": {
-        "name": "Point dimensions",
-        "help": "How big the points on the plot are"
+        "name": "Plot options",
+        "help": "Options controlling how the plot looks"
       },
       "lwd": {
         "name": "Point line width",
@@ -94,12 +94,6 @@
       "cex": {
         "name": "Point size",
         "help": "Magnification factor for the points"
-      }
-    },
-    "plot_chr": {
-      "@title": {
-        "name": "Point look",
-        "help": "Options controlling the look of points on the plot"
       },
       "pch": {
         "name": "Point symbol",
@@ -108,15 +102,25 @@
       "bg": {
         "name": "Secondary point color",
         "help": "Symbols between 21 and 25 have two colours; this is the second one."
-      }
-    },
-    "plot_col": {
-      "@title": {
-        "name": "Point colour"
       },
       "col": {
         "name": "Point colour",
         "help": "Main colour of the points drawn"
+      }
+    },
+    "decisionLine": {
+      "@title": {
+        "name": "Decision boundary options",
+        "help": "Options controlling the look of the decision boundary for AFM or ATM diagrams"
+      },
+      "dlty": {
+        "name": "Line type"
+      },
+      "dlwd": {
+        "name": "Line width"
+      },
+      "dcol": {
+        "name": "Line colour"
       }
     }
   },

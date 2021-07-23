@@ -30,11 +30,11 @@ functions <- list(
       Ti="Ti",
       Zr="Zr",
       Y="Y",
-      #units="tizry_units",
+      units="tizry_units",
       type="tizry_type",
       plot="tizry_plot"
     ),
-    optiongroups=c("plot", "plot_chr")
+    optiongroups=c("plot")
   ),
   TAS=list(
     params=list(
@@ -43,7 +43,7 @@ functions <- list(
       SiO2="SiO2",
       volcanic="volcanic"
     ),
-    optiongroups=c("plot", "plot_col")
+    optiongroups=c("plot")
   ),
   AFM=list(
     params=list(
@@ -51,15 +51,26 @@ functions <- list(
       F="F",
       M="M",
       ternary="ternaryLogratio",
-      radial="radial",
-      bty="boxType",
+      twostage="twoStage",
+      kde="kde",
       bw="bandwidth",
       decision="vermeeschPease",
-      dlty="decisionLineType",
-      dlwd="decisionLineWidth",
-      dcol="decisionLineColour"
+      bty="boxType"
     ),
-    optiongroups=c("plot", "plot_chr", "plot_col")
+    optiongroups=c("plot", "decisionLine")
+  ),
+  ATM=list(
+    params=list(
+      A="A",
+      T="T",
+      M="M",
+      ternary="ternaryLogratio",
+      kde="kde",
+      bw="bandwidth",
+      decision="vermeeschPease",
+      bty="boxType"
+    ),
+    optiongroups=c("plot", "decisionLine")
   )
 )
 
@@ -76,31 +87,31 @@ params <- list(
   tizry_units=list(type="subheader", data="tizry_units"),
   tizry_type=list(type="tizry_type", data="tizry_type"),
   tizry_plot=list(type="tizry_plot", data="tizry_plot"),
-  # AFM
+  # AFM/ATM
   A=list(type="weightCol", data="A"),
   F=list(type="weightCol", data="F"),
+  T=list(type="weightCol", data="T"),
   M=list(type="weightCol", data="M"),
   ternaryLogratio=list(type="b", data="true"),
-  radial=list(type="b", data="false"),
+  twoStage=list(type="b", data="false"),
+  kde=list(type="b", data="false"),
   boxType=list(type="boxType", data="n"),
   bandwidth=list(type="bandwidth", data="bandwidth"),
-  vermeeschPease=list(type="b", data="true"),
-  decisionLineType=list(type="u8", data="decisionLineType"),
-  decisionLineWidth=list(type="u8", data="decisionLineWidth"),
-  decisionLineColour=list(type="color", data="decisionLineColour")
+  vermeeschPease=list(type="b", data="true")
 )
 
 optiongroups <- list(
   plot=list(
     cex=list(type="f"),
-    lwd=list(type="u8")
-  ),
-  plot_chr=list(
+    lwd=list(type="u8"),
     bg=list(type="color", initial='#666'),
-    pch=list(type="u8")
-  ),
-  plot_col=list(
+    pch=list(type="u8"),
     col=list(type="color", initial='#000')
+  ),
+  decisionLine=list(
+    dlty=list(type="u8", initial=2),
+    dlwd=list(type="u8", initial=1.5),
+    dcol=list(type="color", initial="blue")
   ),
   framework=list(
     autorefresh=list(type="b", initial=FALSE)
@@ -118,18 +129,18 @@ types <- list(
   ),
   proportionCol_TiO2=list(
     kind="column",
-    subtype="float"#,
-    #unittype="proportion_TiO2"
+    subtype="f",
+    unittype="proportion_TiO2"
   ),
   proportionCol_ZrO2=list(
     kind="column",
-    subtype="float"#,
-    #unittype="proportion_ZrO2"
+    subtype="f",
+    unittype="proportion_ZrO2"
   ),
   proportionCol_Y2O3=list(
     kind="column",
-    subtype="float"#,
-    #unittype="proportion_Y2O3"
+    subtype="f",
+    unittype="proportion_Y2O3"
   ),
   proportion_TiO2=list(
     kind="enum",
@@ -148,7 +159,7 @@ types <- list(
   ),
   weightCol=list(
     kind="column",
-    subtype="float"
+    subtype="f"
   ),
   boxType=list(
     kind="enum",
@@ -172,15 +183,26 @@ examples <- list(
   tizry_plot="ternary",
   A=getCathColumn("Na2O") + getCathColumn("K2O"),
   F=getCathColumn("FeOT"),
+  T=getCathColumn("TiO2"),
   M=getCathColumn("MgO"),
   true=TRUE,
   false= FALSE,
   n = "n",
-  bandwidth="nrd0",
-  decisionLineType=2,
-  decisionLineWidth=1.5,
-  decisionLineColour="blue"
+  bandwidth="nrd0"
 )
+
+TiZrY <- function(Ti, Zr, Y, units, ...) {
+  if (units[[1]] == "wt%") {
+    Ti <- GeoplotR::wtpct2ppm(Ti, "TiO2")
+  }
+  if (units[[2]] == "wt%") {
+    Zr <- GeoplotR::wtpct2ppm(Zr, "ZrO2")
+  }
+  if (units[[3]] == "wt%") {
+    Y <- GeoplotR::wtpct2ppm(Y, "Y2O3")
+  }
+  GeoplotR::TiZrY(Ti, Zr, Y, ...)
+}
 
 #' Starts the \code{GeoplotR} GUI
 #'
@@ -204,9 +226,10 @@ GeoplotR <- function(host='0.0.0.0', port=NULL, daemonize=FALSE) {
   }
   shinylight::slServer(host=host, port=port, appDir=appDir, daemonize=daemonize,
     interface=list(
-      TiZrY = GeoplotR::TiZrY,
+      TiZrY = TiZrY,
       TAS = GeoplotR::TAS,
       AFM = GeoplotR::AFM,
+      ATM = GeoplotR::ATM,
       getSchema = function() {
         list(functions=functions, params=params, types=types,
           data=examples, optiongroups=optiongroups)
