@@ -54,8 +54,7 @@ functions <- list(
       twostage="twoStage",
       kde="kde",
       bw="bandwidth",
-      decision="vermeeschPease",
-      bty="boxType"
+      decision="vermeeschPease"
     ),
     optiongroups=c("plot", "decisionLine")
   ),
@@ -67,8 +66,7 @@ functions <- list(
       ternary="ternaryLogratio",
       kde="kde",
       bw="bandwidth",
-      decision="vermeeschPease",
-      bty="boxType"
+      decision="vermeeschPease"
     ),
     optiongroups=c("plot", "decisionLine")
   )
@@ -95,7 +93,6 @@ params <- list(
   ternaryLogratio=list(type="b", data="true"),
   twoStage=list(type="b", data="false"),
   kde=list(type="b", data="false"),
-  boxType=list(type="boxType", data="n"),
   bandwidth=list(type="bandwidth", data="bandwidth"),
   vermeeschPease=list(type="b", data="true")
 )
@@ -161,10 +158,6 @@ types <- list(
     kind="column",
     subtype="f"
   ),
-  boxType=list(
-    kind="enum",
-    values=c("o", "n", "7", "L", "C", "U")
-  ),
   bandwidth=list(
     kind="enum",
     values=c("nrd0", "nrd", "ucv", "bcv", "SJ")
@@ -187,7 +180,6 @@ examples <- list(
   M=getCathColumn("MgO"),
   true=TRUE,
   false= FALSE,
-  n = "n",
   bandwidth="nrd0"
 )
 

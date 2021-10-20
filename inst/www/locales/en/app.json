@@ -68,10 +68,6 @@
       "name": "KDE",
       "help": "Adds a kernel density estimate of the Bowen-Fenner indices on a radial scale (only for Logratio plot)"
     },
-    "boxType": {
-      "name": "Box type",
-      "help": "Which boundaries of the plot to draw (only for Logratio plot)"
-    },
     "bandwidth": {
       "name": "Bandwidth",
       "help": "The smoothing bandwidth to be used for the kernel density estimate"
@@ -171,32 +167,6 @@
       "ppm": {
         "name": "ppm",
         "help": "Parts per million"
-      }
-    },
-    "boxType": {
-      "n": {
-        "name": "none",
-        "help": "no box"
-      },
-      "o": {
-        "name": "all",
-        "help": "complete box"
-      },
-      "7": {
-        "name": "top right",
-        "help": "Top and right lines"
-      },
-      "L": {
-        "name": "bottom left",
-        "help": "Bottom and left lines"
-      },
-      "C": {
-        "name": "open right",
-        "help": "top, left and bottom lines"
-      },
-      "U": {
-        "name": "open top",
-        "help": "left, bottom and right lines"
       }
     },
     "bandwidth": {
