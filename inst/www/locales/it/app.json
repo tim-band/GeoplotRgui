@@ -26,7 +26,8 @@
       "name": "Tipo d'analisi"
     },
     "tizry_plot": {
-      "name": "Tipo di grafico"
+      "name": "Diagramma ternario",
+      "help": "Fare una diagramma ternario, invece di una diagramma log ratio"
     },
     "Na2O": {
       "name": "Na₂O"
@@ -39,19 +40,6 @@
     }
   },
   "types": {
-    "tizry_plot": {
-      "none": {
-        "name": "Niente",
-        "help": "Non facere nulla diagramma"
-      },
-      "ternary": {
-        "name": "Ternario",
-        "help": "Diagramma ternario"
-      },
-      "logratio": {
-        "name": "Log Ratio"
-      }
-    },
     "tizry_type": {
       "LDA": {
         "name": "LDA"

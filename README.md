@@ -11,6 +11,28 @@ docker pull timband/geoplotr:beta
 docker run --name geoplotr -p 3820:80 -d timband/geoplotr:beta
 ```
 
+# Rebuilding docker
+
+Build it:
+
+```sh
+docker build -t timband/geoplotr:beta .
+```
+
+Run it to test it with the same line as above:
+
+```sh
+docker stop geoplotr
+docker rm geoplotr
+docker run --name geoplotr -p 3820:80 -d timband/geoplotr:beta
+```
+
+Upload it to Docker Hub.
+
+```sh
+docker push timband/geoplotr:beta
+```
+
 # Nginx stanza
 
 If reverse-proxying to GeoplotRgui on a subpath, you need to

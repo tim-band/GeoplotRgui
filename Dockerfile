@@ -6,9 +6,11 @@ RUN Rscript --vanilla -e \
     "install.packages(c('remotes','later','jsonlite','httpuv'), \
     repos='https://cloud.r-project.org')"
 RUN Rscript --vanilla -e \
-    "remotes::install_github('tim-band/geoplotr@ellipsis-fix')"
+    "remotes::install_github('pvermees/GeoplotR')"
 RUN Rscript --vanilla -e \
-    "remotes::install_github('tim-band/GeoplotRgui@shinylight')"
+    "remotes::install_github('tim-band/GeoplotRgui@split')"
+RUN Rscript --vanilla -e \
+    "remotes::install_github('tim-band/shinylight@v0.2')"
 
 COPY DESCRIPTION /app/DESCRIPTION
 COPY NAMESPACE /app/NAMESPACE

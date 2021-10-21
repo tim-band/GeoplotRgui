@@ -32,7 +32,7 @@ functions <- list(
       Y="Y",
       units="tizry_units",
       type="tizry_type",
-      plot="tizry_plot"
+      ternary="tizry_plot"
     ),
     optiongroups=c("plot")
   ),
@@ -58,6 +58,14 @@ functions <- list(
     ),
     optiongroups=c("plot", "decisionLine")
   ),
+  AnAbOr=list(
+    params=list(
+      An="An",
+      Ab="Ab",
+      Or="Or"
+    ),
+    optiongroups=c("plot")
+  ),
   ATM=list(
     params=list(
       A="A",
@@ -69,6 +77,88 @@ functions <- list(
       decision="vermeeschPease"
     ),
     optiongroups=c("plot", "decisionLine")
+  ),
+  CrY=list(
+    params=list(
+      Cr="Cr",
+      Y="Y"
+    ),
+    optiongroups=c("plot")
+  ),
+  NbLaYb=list(
+    params=list(
+      Nb="Nb",
+      La="La",
+      Yb="Yb"
+    ),
+    optiongroups=c("plot")
+  ),
+  ThNbLaYb=list(
+    params=list(
+      Th="Th",
+      Nb="Nb",
+      La="La",
+      Yb="Yb"
+    ),
+    optiongroups=c("plot")
+  ),
+  LaYb=list(
+    params=list(
+      La_n="La_n",
+      Yb_n="Yb_n"
+    ),
+    optiongroups=c("plot")
+  ),
+  YNb=list(
+    params=list(
+      Y="Y",
+      Nb="Nb"
+    ),
+    optiongroups=c("plot")
+  ),
+  YNbRb=list(
+    params=list(
+      Y="Y",
+      Nb="Nb",
+      Rb="Rb"
+    ),
+    optiongroups=c("plot")
+  ),
+  YbTa=list(
+    params=list(
+      Yb="Yb",
+      Ta="Ta"
+    ),
+    optiongroups=c("plot")
+  ),
+  YbTaRb=list(
+    params=list(
+      Yb="Yb",
+      Ta="Ta",
+      Rb="Rb"
+    ),
+    optiongroups=c("plot")
+  ),
+  SrY=list(
+    params=list(
+      Sr="Sr",
+      Y="Y_SrY"
+    ),
+    optiongroups=c("plot")
+  ),
+  ThCo=list(
+    params=list(
+      Th="Th",
+      Co="Co"
+    ),
+    optiongroups=c("plot")
+  ),
+  ZrTi=list(
+    params=list(
+      Zr="Zr",
+      Ti="Ti"
+    ),
+    optiongroups=c("plot")
   )
 )
 
@@ -84,7 +174,7 @@ params <- list(
   Y=list(type="proportionCol_Y2O3", data="Y"),
   tizry_units=list(type="subheader", data="tizry_units"),
   tizry_type=list(type="tizry_type", data="tizry_type"),
-  tizry_plot=list(type="tizry_plot", data="tizry_plot"),
+  tizry_plot=list(type="b", data=TRUE),
   # AFM/ATM
   A=list(type="weightCol", data="A"),
   F=list(type="weightCol", data="F"),
@@ -94,7 +184,30 @@ params <- list(
   twoStage=list(type="b", data="false"),
   kde=list(type="b", data="false"),
   bandwidth=list(type="bandwidth", data="bandwidth"),
-  vermeeschPease=list(type="b", data="true")
+  vermeeschPease=list(type="b", data="true"),
+  # AnAbOr
+  An=list(type="weightCol", data="An"),
+  Ab=list(type="weightCol", data="Ab"),
+  Or=list(type="weightCol", data="Or"),
+  # CrY
+  Cr=list(type="floatCol", data="Cr"),
+  Y=list(type="floatCol", data="Y"),
+  # Hollocher2012
+  Th=list(type="floatCol", data="Th"),
+  Nb=list(type="floatCol", data="Nb"),
+  La=list(type="floatCol", data="La"),
+  Yb=list(type="floatCol", data="Yb"),
+  # LaYb
+  La_n=list(type="floatCol", data="La_n"),
+  Yb_n=list(type="floatCol", data="Yb_n"),
+  # Pearce1984
+  Rb=list(type="floatCol", data="Rb"),
+  Ta=list(type="floatCol", data="Ta"),
+  # SrY
+  Sr=list(type="floatCol", data="Sr"),
+  Y_SrY=list(type="floatCol", data="Y_SrY"),
+  # ThCo
+  Co=list(type="floatCol", data="Co")
 )
 
 optiongroups <- list(
@@ -106,7 +219,6 @@ optiongroups <- list(
     col=list(type="color", initial='#000')
   ),
   decisionLine=list(
-    dlty=list(type="u8", initial=2),
     dlwd=list(type="u8", initial=1.5),
     dcol=list(type="color", initial="blue")
   ),
@@ -116,13 +228,13 @@ optiongroups <- list(
 )
 
 types <- list(
-  tizry_plot=list(
-    kind="enum",
-    values=c("none", "ternary", "logratio")
-  ),
   tizry_type=list(
     kind="enum",
     values=c("LDA", "QDA", "Pearce")
+  ),
+  floatCol=list(
+    kind="column",
+    subtype="f"
   ),
   proportionCol_TiO2=list(
     kind="column",
@@ -173,11 +285,26 @@ examples <- list(
   Y=getColumn("Y"),
   tizry_units=c("wt%", "ppm", "ppm"),
   tizry_type="LDA",
-  tizry_plot="ternary",
   A=getCathColumn("Na2O") + getCathColumn("K2O"),
   F=getCathColumn("FeOT"),
   T=getCathColumn("TiO2"),
   M=getCathColumn("MgO"),
+  An=c(70,75,73),
+  Ab=c(20,10,27),
+  Or=c(10,15,0),
+  Cr=getColumn("Cr"),
+  Y=getColumn("Y"),
+  Th=getColumn("Th"),
+  Nb=getColumn("Nb"),
+  La=getColumn("La"),
+  Yb=getColumn("Yb"),
+  Rb=getColumn("Rb"),
+  Ta=getColumn("Ta"),
+  Co=getColumn("Co"),
+  La_n=c(100),
+  Yb_n=c(10),
+  Sr=c(1000),
+  Y_SrY=c(10),
   true=TRUE,
   false= FALSE,
   bandwidth="nrd0"
@@ -218,10 +345,22 @@ GeoplotR <- function(host='0.0.0.0', port=NULL, daemonize=FALSE) {
   }
   shinylight::slServer(host=host, port=port, appDir=appDir, daemonize=daemonize,
     interface=list(
+      AFM = GeoplotR::AFM,
       TiZrY = TiZrY,
       TAS = GeoplotR::TAS,
-      AFM = GeoplotR::AFM,
       ATM = GeoplotR::ATM,
+      AnAbOr = GeoplotR::AnAbOr,
+      CrY = GeoplotR::CrY,
+      NbLaYb = GeoplotR::NbLaYb,
+      ThNbLaYb = GeoplotR::ThNbLaYb,
+      LaYb = GeoplotR::LaYb,
+      YNb = GeoplotR::YNb,
+      YNbRb = GeoplotR::YNbRb,
+      YbTa = GeoplotR::YbTa,
+      YbTaRb = GeoplotR::YbTaRb,
+      SrY = GeoplotR::SrY,
+      ThCo = GeoplotR::ThCo,
+      ZrTi = GeoplotR::ZrTi,
       getSchema = function() {
         list(functions=functions, params=params, types=types,
           data=examples, optiongroups=optiongroups)
