@@ -25,6 +25,17 @@ getCathColumn <- function(column) {
 }
 
 functions <- list(
+  AFM=list(
+    params=list(
+      A="A",
+      F="F",
+      M="M",
+      ternary="ternaryLogratio",
+      twostage="twoStage",
+      kde="kde",
+      bw="bandwidth",
+      decision="vermeeschPease"
+    ),
   TiZrY=list(
     params=list(
       Ti="Ti",
@@ -45,17 +56,6 @@ functions <- list(
     ),
     optiongroups=c("plot")
   ),
-  AFM=list(
-    params=list(
-      A="A",
-      F="F",
-      M="M",
-      ternary="ternaryLogratio",
-      twostage="twoStage",
-      kde="kde",
-      bw="bandwidth",
-      decision="vermeeschPease"
-    ),
     optiongroups=c("plot", "decisionLine")
   ),
   AnAbOr=list(
