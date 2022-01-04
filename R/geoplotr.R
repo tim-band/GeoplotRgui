@@ -335,7 +335,12 @@ TiZrY <- function(Ti, Zr, Y, units, ...) {
 #' This is useful when called from RScript, to keep
 #' @return server object, unless daemonize is TRUE.
 #' @examples
-#' #GeoplotR()
+#' \dontrun{
+#' GeoplotR()
+#' }
+#' \dontrun{
+#' GeoplotR(host='127.0.0.1', port=3820, daemonize=TRUE)
+#' }
 #' @export
 GeoplotR <- function(host='0.0.0.0', port=NULL, daemonize=FALSE) {
   appDir <- system.file("www", package = "GeoplotRgui")
