@@ -1,4 +1,6 @@
-FROM r-base:3.6.3
+FROM alpine:3.12
+
+RUN apk add build-base xfce4-dev-tools R R-dev ttf-liberation
 
 WORKDIR /app
 
@@ -6,11 +8,11 @@ RUN Rscript --vanilla -e \
     "install.packages(c('remotes','later','jsonlite','httpuv'), \
     repos='https://cloud.r-project.org')"
 RUN Rscript --vanilla -e \
-    "remotes::install_github('pvermees/GeoplotR')"
+    "remotes::install_github('pvermees/GeoplotR@beta')"
 RUN Rscript --vanilla -e \
-    "remotes::install_github('tim-band/GeoplotRgui@split')"
+    "remotes::install_github('tim-band/GeoplotRgui')"
 RUN Rscript --vanilla -e \
-    "remotes::install_github('tim-band/shinylight@v0.2')"
+    "remotes::install_github('tim-band/shinylight@v0.3')"
 
 COPY DESCRIPTION /app/DESCRIPTION
 COPY NAMESPACE /app/NAMESPACE
