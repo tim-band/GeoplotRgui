@@ -3,7 +3,7 @@
     "description": "Front end for GeoplotR",
     "private": true,
     "scripts": {
-        "server": "Rscript --vanilla build/start-gui.R 50056",
+        "server": "Rscript --vanilla build/start-gui.R 127.0.0.1:50056",
         "test": "mocha test"
     },
     "devDependencies": {
