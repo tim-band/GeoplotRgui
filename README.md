@@ -105,15 +105,10 @@ sudo systemctl enable geoplotr
 
 ## make an update script
 
-Copy the following into a new file `/usr/local/sbin/updateGeoplotR.sh`:
+Copy the file `updateGeoplotR.sh` to somewhere on all users' paths, for
+example `/usr/local/sbin/`.
 
-```sh
-sudo -Hu wwwrunner Rscript -e \
-"remotes::install_github(repo=c('pvermees/GeoplotR', 'tim-band/GeoplotRgui'),force=TRUE,lib='~/R')"
-sudo systemctl restart geoplotr
-```
-
-Now make it executable and run it (it will take a while to run):
+Make sure it is executable and run it (it will take a while to run):
 
 ```sh
 sudo chmod a+x /usr/local/sbin/updateGeoplotR.sh
