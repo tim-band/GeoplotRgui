@@ -54,7 +54,9 @@ functions <- list(
       Na2O="Na2O",
       K2O="K2O",
       SiO2="SiO2",
-      volcanic="volcanic"
+      volcanic="volcanic",
+      show.labels="showlabels",
+      short="shortlabels"
     ),
     optiongroups=c("plot")
   ),
@@ -168,6 +170,8 @@ params <- list(
   K2O=list(type="weightCol", data="K2O"),
   SiO2=list(type="weightCol", data="SiO2"),
   volcanic=list(type="b", data="true"),
+  showlabels=list(type="b", data="true"),
+  shortlabels=list(type="b", data="true"),
   # TiZrY
   Ti=list(type="proportionCol_TiO2", data="Ti"),
   Zr=list(type="proportionCol_ZrO2", data="Zr"),
