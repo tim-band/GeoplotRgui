@@ -36,6 +36,8 @@ functions <- list(
       bw="bandwidth",
       decision="vermeeschPease"
     ),
+    optiongroups=c("plot", "decisionLine")
+  ),
   TiZrY=list(
     params=list(
       Ti="Ti",
@@ -55,8 +57,6 @@ functions <- list(
       volcanic="volcanic"
     ),
     optiongroups=c("plot")
-  ),
-    optiongroups=c("plot", "decisionLine")
   ),
   AnAbOr=list(
     params=list(
