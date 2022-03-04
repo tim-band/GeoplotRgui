@@ -104,6 +104,18 @@
       "name": "Volcanic",
       "help": "Volcanic (not plutonic) sample"
     },
+    "showlabels": {
+      "name": "Show labels",
+      "help": "Label the discrimination fields"
+    },
+    "shortlabels": {
+      "name": "Short labels",
+      "help": "Abbreviate the field labels"
+    },
+    "volcanic": {
+      "name": "Volcanic",
+      "help": "Volcanic (not plutonic) sample"
+    },
     "ternaryLogratio": {
       "name": "Ternary",
       "help": "Ternary or logratio plot"

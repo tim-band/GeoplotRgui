@@ -38,26 +38,6 @@ functions <- list(
     ),
     optiongroups=c("plot", "decisionLine")
   ),
-  TiZrY=list(
-    params=list(
-      Ti="Ti",
-      Zr="Zr",
-      Y="Y",
-      units="tizry_units",
-      type="tizry_type",
-      ternary="tizry_plot"
-    ),
-    optiongroups=c("plot")
-  ),
-  TAS=list(
-    params=list(
-      Na2O="Na2O",
-      K2O="K2O",
-      SiO2="SiO2",
-      volcanic="volcanic"
-    ),
-    optiongroups=c("plot")
-  ),
   AnAbOr=list(
     params=list(
       An="An",
@@ -78,10 +58,28 @@ functions <- list(
     ),
     optiongroups=c("plot", "decisionLine")
   ),
+  TAS=list(
+    params=list(
+      Na2O="Na2O",
+      K2O="K2O",
+      SiO2="SiO2",
+      volcanic="volcanic",
+      show.labels="showlabels",
+      short="shortlabels"
+    ),
+    optiongroups=c("plot")
+  ),
   CrY=list(
     params=list(
       Cr="Cr",
       Y="Y"
+    ),
+    optiongroups=c("plot")
+  ),
+  LaYb=list(
+    params=list(
+      La_n="La_n",
+      Yb_n="Yb_n"
     ),
     optiongroups=c("plot")
   ),
@@ -90,6 +88,20 @@ functions <- list(
       Nb="Nb",
       La="La",
       Yb="Yb"
+    ),
+    optiongroups=c("plot")
+  ),
+  SrY=list(
+    params=list(
+      Sr="Sr",
+      Y="Y_SrY"
+    ),
+    optiongroups=c("plot")
+  ),
+  ThCo=list(
+    params=list(
+      Th="Th",
+      Co="Co"
     ),
     optiongroups=c("plot")
   ),
@@ -102,25 +114,14 @@ functions <- list(
     ),
     optiongroups=c("plot")
   ),
-  LaYb=list(
+  TiZrY=list(
     params=list(
-      La_n="La_n",
-      Yb_n="Yb_n"
-    ),
-    optiongroups=c("plot")
-  ),
-  YNb=list(
-    params=list(
+      Ti="Ti",
+      Zr="Zr",
       Y="Y",
-      Nb="Nb"
-    ),
-    optiongroups=c("plot")
-  ),
-  YNbRb=list(
-    params=list(
-      Y="Y",
-      Nb="Nb",
-      Rb="Rb"
+      units="tizry_units",
+      type="tizry_type",
+      ternary="tizry_plot"
     ),
     optiongroups=c("plot")
   ),
@@ -139,42 +140,32 @@ functions <- list(
     ),
     optiongroups=c("plot")
   ),
-  SrY=list(
+  YNb=list(
     params=list(
-      Sr="Sr",
-      Y="Y_SrY"
+      Y="Y",
+      Nb="Nb"
     ),
     optiongroups=c("plot")
   ),
-  ThCo=list(
+  YNbRb=list(
     params=list(
-      Th="Th",
-      Co="Co"
+      Y="Y",
+      Nb="Nb",
+      Rb="Rb"
     ),
     optiongroups=c("plot")
   ),
   ZrTi=list(
     params=list(
       Zr="Zr",
-      Ti="Ti"
+      Ti="Ti",
+      units="zrti_units"
     ),
     optiongroups=c("plot")
   )
 )
 
 params <- list(
-  # TAS
-  Na2O=list(type="weightCol", data="Na2O"),
-  K2O=list(type="weightCol", data="K2O"),
-  SiO2=list(type="weightCol", data="SiO2"),
-  volcanic=list(type="b", data="true"),
-  # TiZrY
-  Ti=list(type="proportionCol_TiO2", data="Ti"),
-  Zr=list(type="proportionCol_ZrO2", data="Zr"),
-  Y=list(type="proportionCol_Y2O3", data="Y"),
-  tizry_units=list(type="subheader", data="tizry_units"),
-  tizry_type=list(type="tizry_type", data="tizry_type"),
-  tizry_plot=list(type="b", data=TRUE),
   # AFM/ATM
   A=list(type="weightCol", data="A"),
   F=list(type="weightCol", data="F"),
@@ -192,22 +183,38 @@ params <- list(
   # CrY
   Cr=list(type="floatCol", data="Cr"),
   Y=list(type="floatCol", data="Y"),
-  # Hollocher2012
-  Th=list(type="floatCol", data="Th"),
-  Nb=list(type="floatCol", data="Nb"),
-  La=list(type="floatCol", data="La"),
-  Yb=list(type="floatCol", data="Yb"),
   # LaYb
   La_n=list(type="floatCol", data="La_n"),
   Yb_n=list(type="floatCol", data="Yb_n"),
-  # Pearce1984
+  # TAS
+  Na2O=list(type="weightCol", data="Na2O"),
+  K2O=list(type="weightCol", data="K2O"),
+  SiO2=list(type="weightCol", data="SiO2"),
+  volcanic=list(type="b", data="true"),
+  showlabels=list(type="b", data="true"),
+  shortlabels=list(type="b", data="true"),
+  # Rb-Ta (Pearce1984)
   Rb=list(type="floatCol", data="Rb"),
   Ta=list(type="floatCol", data="Ta"),
   # SrY
   Sr=list(type="floatCol", data="Sr"),
   Y_SrY=list(type="floatCol", data="Y_SrY"),
   # ThCo
-  Co=list(type="floatCol", data="Co")
+  Co=list(type="floatCol", data="Co"),
+  # Th-Nb-La-Yb (Hollocher2012)
+  Th=list(type="floatCol", data="Th"),
+  Nb=list(type="floatCol", data="Nb"),
+  La=list(type="floatCol", data="La"),
+  Yb=list(type="floatCol", data="Yb"),
+  # TiZrY
+  Ti=list(type="proportionCol_TiO2", data="Ti"),
+  Zr=list(type="proportionCol_ZrO2", data="Zr"),
+  Y=list(type="proportionCol_Y2O3", data="Y"),
+  tizry_units=list(type="subheader", data="tizry_units"),
+  tizry_type=list(type="tizry_type", data="tizry_type"),
+  tizry_plot=list(type="b", data=TRUE),
+  # ZrTi
+  zrti_units=list(type="subheader", data="zrti_units")
 )
 
 optiongroups <- list(
@@ -277,37 +284,38 @@ types <- list(
 )
 
 examples <- list(
-  Na2O=getColumn("Na2O"),
-  K2O=getColumn("K2O"),
-  SiO2=getColumn("SiO2"),
-  Ti=getColumn("TiO2"),
-  Zr=getColumn("Zr"),
-  Y=getColumn("Y"),
-  tizry_units=c("wt%", "ppm", "ppm"),
-  tizry_type="LDA",
-  A=getCathColumn("Na2O") + getCathColumn("K2O"),
-  F=getCathColumn("FeOT"),
-  T=getCathColumn("TiO2"),
-  M=getCathColumn("MgO"),
-  An=c(70,75,73),
-  Ab=c(20,10,27),
-  Or=c(10,15,0),
-  Cr=getColumn("Cr"),
-  Y=getColumn("Y"),
-  Th=getColumn("Th"),
-  Nb=getColumn("Nb"),
-  La=getColumn("La"),
-  Yb=getColumn("Yb"),
-  Rb=getColumn("Rb"),
-  Ta=getColumn("Ta"),
-  Co=getColumn("Co"),
-  La_n=c(100),
-  Yb_n=c(10),
-  Sr=c(1000),
-  Y_SrY=c(10),
-  true=TRUE,
-  false= FALSE,
-  bandwidth="nrd0"
+    Na2O=getColumn("Na2O"),
+    K2O=getColumn("K2O"),
+    SiO2=getColumn("SiO2"),
+    Ti=getColumn("TiO2"),
+    Zr=getColumn("Zr"),
+    Y=getColumn("Y"),
+    A=getCathColumn("Na2O") + getCathColumn("K2O"),
+    F=getCathColumn("FeOT"),
+    T=getCathColumn("TiO2"),
+    M=getCathColumn("MgO"),
+    An=c(70,75,73),
+    Ab=c(20,10,27),
+    Or=c(10,15,0),
+    Cr=getColumn("Cr"),
+    Y=getColumn("Y"),
+    Th=getColumn("Th"),
+    Nb=getColumn("Nb"),
+    La=getColumn("La"),
+    Yb=getColumn("Yb"),
+    Rb=getColumn("Rb"),
+    Ta=getColumn("Ta"),
+    Co=getColumn("Co"),
+    zrti_units=c("ppm","wt%"),
+    tizry_units=c("wt%", "ppm", "ppm"),
+    tizry_type="LDA",
+    La_n=c(100),
+    Yb_n=c(10),
+    Sr=c(1000),
+    Y_SrY=c(10),
+    true=TRUE,
+    false= FALSE,
+    bandwidth="nrd0"
 )
 
 TiZrY <- function(Ti, Zr, Y, units, ...) {
@@ -321,6 +329,15 @@ TiZrY <- function(Ti, Zr, Y, units, ...) {
     Y <- GeoplotR::wtpct2ppm(Y, "Y2O3")
   }
   GeoplotR::TiZrY(Ti, Zr, Y, ...)
+}
+ZrTi <- function(Zr, Ti, units, ...) {
+  if (units[[1]] == "wt%") {
+    Zr <- GeoplotR::wtpct2ppm(Zr, "ZrO2")
+  }
+  if (units[[2]] == "wt%") {
+    Ti <- GeoplotR::wtpct2ppm(Ti, "TiO2")
+  }
+  GeoplotR::ZrTi(Zr, Ti, ...)
 }
 
 #' Starts the \code{GeoplotR} GUI
@@ -351,21 +368,21 @@ GeoplotR <- function(host='0.0.0.0', port=NULL, daemonize=FALSE) {
   shinylight::slServer(host=host, port=port, appDir=appDir, daemonize=daemonize,
     interface=list(
       AFM = GeoplotR::AFM,
-      TiZrY = TiZrY,
-      TAS = GeoplotR::TAS,
-      ATM = GeoplotR::ATM,
       AnAbOr = GeoplotR::AnAbOr,
+      ATM = GeoplotR::ATM,
       CrY = GeoplotR::CrY,
-      NbLaYb = GeoplotR::NbLaYb,
-      ThNbLaYb = GeoplotR::ThNbLaYb,
       LaYb = GeoplotR::LaYb,
-      YNb = GeoplotR::YNb,
-      YNbRb = GeoplotR::YNbRb,
+      NbLaYb = GeoplotR::NbLaYb,
+      SrY = GeoplotR::SrY,
+      TAS = GeoplotR::TAS,
+      ThCo = GeoplotR::ThCo,
+      ThNbLaYb = GeoplotR::ThNbLaYb,
+      TiZrY = TiZrY,
       YbTa = GeoplotR::YbTa,
       YbTaRb = GeoplotR::YbTaRb,
-      SrY = GeoplotR::SrY,
-      ThCo = GeoplotR::ThCo,
-      ZrTi = GeoplotR::ZrTi,
+      YNb = GeoplotR::YNb,
+      YNbRb = GeoplotR::YNbRb,
+      ZrTi = ZrTi,
       getSchema = function() {
         list(functions=functions, params=params, types=types,
           data=examples, optiongroups=optiongroups)
