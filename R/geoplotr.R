@@ -114,6 +114,16 @@ functions <- list(
     ),
     optiongroups=c("plot")
   ),
+  TiV=list(
+    params=list(
+      Ti="Ti",
+      V="V",
+      units="tiv_units",
+      type="tiv_type",
+      ternary="tiv_plot"
+    ),
+    optiongroups=c("plot")
+  ),
   TiZrY=list(
     params=list(
       Ti="Ti",
@@ -206,14 +216,19 @@ params <- list(
   Nb=list(type="floatCol", data="Nb"),
   La=list(type="floatCol", data="La"),
   Yb=list(type="floatCol", data="Yb"),
-  # TiZrY
+  # Ti-V
   Ti=list(type="proportionCol_TiO2", data="Ti"),
+  V=list(type="floatCol", data="V"),
+  tiv_units=list(type="subheader", data="tiv_units"),
+  tiv_type=list(type="tiv_type", data="tiv_type"),
+  tiv_plot=list(type="b", data=FALSE),
+  # Ti-Zr-Y
   Zr=list(type="proportionCol_ZrO2", data="Zr"),
   Y=list(type="proportionCol_Y2O3", data="Y"),
   tizry_units=list(type="subheader", data="tizry_units"),
   tizry_type=list(type="tizry_type", data="tizry_type"),
   tizry_plot=list(type="b", data=TRUE),
-  # ZrTi
+  # Zr-Ti
   zrti_units=list(type="subheader", data="zrti_units")
 )
 
@@ -235,6 +250,10 @@ optiongroups <- list(
 )
 
 types <- list(
+  tiv_type=list(
+    kind="enum",
+    values=c("LDA", "QDA", "Shervais")
+  ),
   tizry_type=list(
     kind="enum",
     values=c("LDA", "QDA", "Pearce")
@@ -306,6 +325,7 @@ examples <- list(
     Rb=getColumn("Rb"),
     Ta=getColumn("Ta"),
     Co=getColumn("Co"),
+    V=getColumn("V"),
     zrti_units=c("ppm","wt%"),
     tizry_units=c("wt%", "ppm", "ppm"),
     tizry_type="LDA",
@@ -318,6 +338,12 @@ examples <- list(
     bandwidth="nrd0"
 )
 
+TiV <- function(Ti, V, units, ...) {
+  if (units[[1]] == "wt%") {
+    Ti <- GeoplotR::wtpct2ppm(Ti, "TiO2")
+  }
+  GeoplotR::TiV(Ti, V, ...)
+}
 TiZrY <- function(Ti, Zr, Y, units, ...) {
   if (units[[1]] == "wt%") {
     Ti <- GeoplotR::wtpct2ppm(Ti, "TiO2")
@@ -377,6 +403,7 @@ GeoplotR <- function(host='0.0.0.0', port=NULL, daemonize=FALSE) {
       TAS = GeoplotR::TAS,
       ThCo = GeoplotR::ThCo,
       ThNbLaYb = GeoplotR::ThNbLaYb,
+      TiV = TiV,
       TiZrY = TiZrY,
       YbTa = GeoplotR::YbTa,
       YbTaRb = GeoplotR::YbTaRb,

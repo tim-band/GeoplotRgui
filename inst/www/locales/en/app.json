@@ -1,298 +1,328 @@
 {
   "title": "GeoplotR",
   "homelink": "https://github.com/pvermees/GeoplotR",
-  "functions": {
-    "TiZrY": {
-      "name": "Ti-Zr-Y",
-      "help": "Ti-Zr-Y tectonic discrimination diagram"
+    "functions": {
+	"TiV": {
+	    "name": "Ti-V",
+	    "help": "Ti-V tectonic discrimination diagram"
+	},
+	"TiZrY": {
+	    "name": "Ti-Zr-Y",
+	    "help": "Ti-Zr-Y tectonic discrimination diagram"
+	},
+	"TAS": {
+	    "name": "TAS",
+	    "help": "Total Alkali Silica diagram"
+	},
+	"AFM": {
+	    "name": "AFM",
+	    "help": "A-F-M diagram"
+	},
+	"AnAbOr": {
+	    "name": "An-Ab-Or",
+	    "help": "An-Ab-Or diagram for tonalite, trondhjemite, granodiorite, and granite of Barker (1979)"
+	},
+	"ATM": {
+	    "name": "ATM",
+	    "help": "A-T-M diagram"
+	},
+	"CrY": {
+	    "name": "Cr-Y",
+	    "help": "Cr vs Y discriminant for MORB, IAT, and boninites of Dilek et al. (2007)"
+	},
+	"LaYb": {
+	    "name": "La/Yb-Yb",
+	    "help": "(La/Yb)_N vs. Yb_N diagram of Martin (1986), which discriminates between Archean TTG suite and more modern adakites on the one hand, and classical island arcs on the other hand."
+	},
+	"NbLaYb": {
+	    "name": "Hollocher Nb-La-Yb",
+	    "help": "Discriminants for MORB, ocean island, and a variety of arc-type basalts, Hollocher et al. (2012)"
+	},
+	"ThNbLaYb": {
+	    "name": "Hollocher Th-Nb-La-Yb",
+	    "help": "Discriminants for MORB, ocean island, and a variety of arc-type basalts, Hollocher et al. (2012)"
+	},
+	"SrY": {
+	    "name": "Sr/Y-Y",
+	    "help": "(Sr/Y) vs. Y diagram of Drummond (1990), which discriminates between Archean TTG suite and more modern adakites on the one hand, and classical island arcs on the other hand."
+	},
+	"ThCo": {
+	    "name": "Th-Co",
+	    "help": "Th vs Co discrimination diagram of Hastie et al. (2007) for tholeiitic, calc-alkaline, and more alkaline arc series, and basaltic, andesitic, and rhyolitic compositions."
+	},
+	"YNb": {
+	    "name": "Y-Nb",
+	    "help": "Pearce et al. (1984) Y-Nb diagram"
+	},
+	"YNbRb": {
+	    "name": "Y-Nb-Rb",
+	    "help": "Pearce et al. (1984) Y-Nb-Rb diagram"
+	},
+	"YbTa": {
+	    "name": "Yb-Ta",
+	    "help": "Pearce et al. (1984) Yb-Ta diagram"
+	},
+	"YbTaRb": {
+	    "name": "Yb-Ta-Rb",
+	    "help": "Pearce et al. (1984) Yb-Ta-Rb diagram"
+	},
+	"ZrTi": {
+	    "name": "Ti-Zr",
+	    "help": "Zr vs Ti discrimination diagram of Dilek and Furnes (2009) for MORB, IAT, and boninites, modified after earlier workers."
+	}
     },
-    "TAS": {
-      "name": "TAS",
-      "help": "Total Alkali Silica diagram"
+    "params" : {
+	"Ti": {
+	    "name": "Ti",
+	    "help": "Titanium (ppm) or TiO₂ (weight %) concentrations"
+	},
+	"V": {
+	    "name": "V",
+	    "help": "Vanadium concentrations"
+	},
+	"Zr": {
+	    "name": "Zr",
+	    "help": "Zirconium concentrations (ppm)"
+	},
+	"Y": {
+	    "name": "Y",
+	    "help": "Yttrium concentrations (ppm)"
+	},
+	"tiv_type": {
+	    "name": "Analysis type",
+	    "help": "Type of analysis; LDA, QDA or Shervais"
+	},
+	"tiv_plot": {
+	    "name": "Ternary plot",
+	    "help": "Produce a ternary plot, rather than a bivariate ratio plot"
+	},
+	"tizry_type": {
+	    "name": "Analysis type",
+	    "help": "Type of analysis; LDA, QDA or Pearce"
+	},
+	"tizry_plot": {
+	    "name": "Ternary plot",
+	    "help": "Produce a ternary plot, rather than a bivariate logratio plot"
+	},
+	"Na2O": {
+	    "name": "Na₂O",
+	    "help": "concentrations of Na₂O"
+	},
+	"K2O": {
+	    "name": "K₂O",
+	    "help": "concentrations of K₂O"
+	},
+	"SiO2": {
+	    "name": "SiO₂",
+	    "help":"concentrations of SiO₂"
+	},
+	"volcanic": {
+	    "name": "Volcanic",
+	    "help": "Volcanic (not plutonic) sample"
+	},
+	"showlabels": {
+	    "name": "Show labels",
+	    "help": "Label the discrimination fields"
+	},
+	"shortlabels": {
+	    "name": "Short labels",
+	    "help": "Abbreviate the field labels"
+	},
+	"volcanic": {
+	    "name": "Volcanic",
+	    "help": "Volcanic (not plutonic) sample"
+	},
+	"ternaryLogratio": {
+	    "name": "Ternary",
+	    "help": "Ternary or logratio plot"
+	},
+	"twoStage": {
+	    "name": "Two stage",
+	    "help": "Applies the two-stage magma evolution model of Vermeesch and Pease (2021), rather than the single-stage model"
+	},
+	"kde": {
+	    "name": "KDE",
+	    "help": "Adds a kernel density estimate of the Bowen-Fenner indices on a radial scale (only for Logratio plot)"
+	},
+	"bandwidth": {
+	    "name": "Bandwidth",
+	    "help": "The smoothing bandwidth to be used for the kernel density estimate"
+	},
+	"vermeeschPease": {
+	    "name": "Decision",
+	    "help": "Adds the decision boundary between the tholeiitic and calc-alkaline magma series to the plot (only for Ternary plot)"
+	},
+	"An": {
+	    "name": "Anorthite",
+	    "help": "normative anorthite concentrations (wt%)"
+	},
+	"Ab": {
+	    "name": "Albite",
+	    "help": "normative albite concentrations (wt%)"
+	},
+	"Or": {
+	    "name": "Orthoclase",
+	    "help": "normative orthoclase concentrations (wt%)"
+	},
+	"Cr": {
+	    "name": "Cr",
+	    "help": "Chromium concentrations (ppm)"
+	},
+	"Th": {
+	    "name": "Th",
+	    "help": "Thorium concentrations (ppm)"
+	},
+	"Nb": {
+	    "name": "Nb",
+	    "help": "Niobium concentrations (ppm)"
+	},
+	"La": {
+	    "name": "La",
+	    "help": "Lathanum concentrations (ppm)"
+	},
+	"Yb": {
+	    "name": "Yb",
+	    "help": "Ytterbium concentrations (ppm)"
+	},
+	"La_n": {
+	    "name": "La",
+	    "help": "Chondritic normalised lathanum concentrations"
+	},
+	"Yb_n": {
+	    "name": "Yb",
+	    "help": "Chondritic normalised ytterbium concentrations (ppm)"
+	},
+	"Rb": {
+	    "name": "Rb",
+	    "help": "Rubidium concentrations (ppm)"
+	},
+	"Ta": {
+	    "name": "Ta",
+	    "help": "Tantalum concentrations (ppm)"
+	},
+	"Sr": {
+	    "name": "Sr",
+	    "help": "Strontiumium concentrations (ppm)"
+	},
+	"Y_SrY": {
+	    "name": "Y",
+	    "help": "Yttrium concentrations (ppm)"
+	},
+	"Co": {
+	    "name": "Co",
+	    "help": "Cobalt concentrations (ppm)"
+	}
     },
-    "AFM": {
-      "name": "AFM",
-      "help": "A-F-M diagram"
+    "optiongroups": {
+	"plot": {
+	    "@title": {
+		"name": "Plot options",
+		"help": "Options controlling how the plot looks"
+	    },
+	    "lwd": {
+		"name": "Point line width",
+		"help": "The line width the points are drawn with, default is 1.0"
+	    },
+	    "cex": {
+		"name": "Point size",
+		"help": "Magnification factor for the points"
+	    },
+	    "pch": {
+		"name": "Point symbol",
+		"help": "Plotting symbol to use. Between 0 and 25 for standard symbols or 32 and 127 for ASCII characters"
+	    },
+	    "bg": {
+		"name": "Secondary point color",
+		"help": "Symbols between 21 and 25 have two colours; this is the second one."
+	    },
+	    "col": {
+		"name": "Point colour",
+		"help": "Main colour of the points drawn"
+	    }
+	},
+	"decisionLine": {
+	    "@title": {
+		"name": "Decision boundary options",
+		"help": "Options controlling the look of the decision boundary for AFM or ATM diagrams"
+	    },
+	    "dlwd": {
+		"name": "Line width"
+	    },
+	    "dcol": {
+		"name": "Line colour"
+	    }
+	}
     },
-    "AnAbOr": {
-      "name": "An-Ab-Or",
-      "help": "An-Ab-Or diagram for tonalite, trondhjemite, granodiorite, and granite of Barker (1979)"
-    },
-    "ATM": {
-      "name": "ATM",
-      "help": "A-T-M diagram"
-    },
-    "CrY": {
-      "name": "Cr-Y",
-      "help": "Cr vs Y discriminant for MORB, IAT, and boninites of Dilek et al. (2007)"
-    },
-    "LaYb": {
-      "name": "La/Yb-Yb",
-      "help": "(La/Yb)_N vs. Yb_N diagram of Martin (1986), which discriminates between Archean TTG suite and more modern adakites on the one hand, and classical island arcs on the other hand."
-    },
-    "NbLaYb": {
-      "name": "Hollocher Nb-La-Yb",
-      "help": "Discriminants for MORB, ocean island, and a variety of arc-type basalts, Hollocher et al. (2012)"
-    },
-    "ThNbLaYb": {
-      "name": "Hollocher Th-Nb-La-Yb",
-      "help": "Discriminants for MORB, ocean island, and a variety of arc-type basalts, Hollocher et al. (2012)"
-    },
-    "SrY": {
-      "name": "Sr/Y-Y",
-      "help": "(Sr/Y) vs. Y diagram of Drummond (1990), which discriminates between Archean TTG suite and more modern adakites on the one hand, and classical island arcs on the other hand."
-    },
-    "ThCo": {
-      "name": "Th-Co",
-      "help": "Th vs Co discrimination diagram of Hastie et al. (2007) for tholeiitic, calc-alkaline, and more alkaline arc series, and basaltic, andesitic, and rhyolitic compositions."
-    },
-    "YNb": {
-      "name": "Y-Nb",
-      "help": "Pearce et al. (1984) Y-Nb diagram"
-    },
-    "YNbRb": {
-      "name": "Y-Nb-Rb",
-      "help": "Pearce et al. (1984) Y-Nb-Rb diagram"
-    },
-    "YbTa": {
-      "name": "Yb-Ta",
-      "help": "Pearce et al. (1984) Yb-Ta diagram"
-    },
-    "YbTaRb": {
-      "name": "Yb-Ta-Rb",
-      "help": "Pearce et al. (1984) Yb-Ta-Rb diagram"
-    },
-    "ZrTi": {
-      "name": "Ti-Zr",
-      "help": "Zr vs Ti discrimination diagram of Dilek and Furnes (2009) for MORB, IAT, and boninites, modified after earlier workers."
+    "types": {
+	"tiv_type": {
+	    "LDA": {
+		"name": "LDA",
+		"help": "Linear Discriminant Analysis"
+	    },
+	    "QDA": {
+		"name": "QDA",
+		"help": "Quadratic Discriminant Analysis"
+	    },
+	    "Shervais": {
+		"name": "Shervais",
+		"help": "The nominal decision boundaries of Shervais (1982)"
+	    }
+	},
+	"tizry_type": {
+	    "LDA": {
+		"name": "LDA",
+		"help": "Linear Discriminant Analysis"
+	    },
+	    "QDA": {
+		"name": "QDA",
+		"help": "Quadratic Discriminant Analysis"
+	    },
+	    "Pearce": {
+		"name": "Pearce",
+		"help": "The nominal decision boundaries of Pearce and Cann (1973)"
+	    }
+	},
+	"proportion": {
+	    "wt%": {
+		"name": "weight %",
+		"help": "percentage by weight"
+	    },
+	    "ppm": {
+		"name": "ppm",
+		"help": "Parts per million"
+	    }
+	},
+	"proportion_TiO2": {
+	    "wt%": {
+		"name": "weight %",
+		"help": "percentage by weight"
+	    },
+	    "ppm": {
+		"name": "ppm",
+		"help": "Parts per million"
+	    }
+	},
+	"bandwidth": {
+	    "nrd0": {
+		"name": "Silverman",
+		"help": "Silverman's rule of thumb"
+	    },
+	    "nrd": {
+		"name": "Scott",
+		"help": "Scott's variation of Silverman's rule of thumb"
+	    },
+	    "ucv": {
+		"name": "UCV",
+		"help": "Unbiased cross-validation"
+	    },
+	    "bcv": {
+		"name": "BCV",
+		"help": "Biased cross-validation"
+	    },
+	    "SJ": {
+		"name": "Sheather & Jones",
+		"help": "Using pilot estimation of derivatives"
+	    }
+	}
     }
-  },
-  "params" : {
-    "Ti": {
-      "name": "Ti",
-      "help": "Titanium (ppm) or TiO₂ (weight %) concentrations"
-    },
-    "Zr": {
-      "name": "Zr",
-      "help": "Zirconium concentrations (ppm)"
-    },
-    "Y": {
-      "name": "Y",
-      "help": "Yttrium concentrations (ppm)"
-    },
-    "tizry_type": {
-      "name": "Analysis type",
-      "help": "Type of analysis; LDA, QDA or Pearce"
-    },
-    "tizry_plot": {
-      "name": "Ternary plot",
-      "help": "Produce a ternary plot, rather than a bivariate logratio plot"
-    },
-    "Na2O": {
-      "name": "Na₂O",
-      "help": "concentrations of Na₂O"
-    },
-    "K2O": {
-      "name": "K₂O",
-      "help": "concentrations of K₂O"
-    },
-    "SiO2": {
-      "name": "SiO₂",
-      "help":"concentrations of SiO₂"
-    },
-    "volcanic": {
-      "name": "Volcanic",
-      "help": "Volcanic (not plutonic) sample"
-    },
-    "showlabels": {
-      "name": "Show labels",
-      "help": "Label the discrimination fields"
-    },
-    "shortlabels": {
-      "name": "Short labels",
-      "help": "Abbreviate the field labels"
-    },
-    "volcanic": {
-      "name": "Volcanic",
-      "help": "Volcanic (not plutonic) sample"
-    },
-    "ternaryLogratio": {
-      "name": "Ternary",
-      "help": "Ternary or logratio plot"
-    },
-    "twoStage": {
-      "name": "Two stage",
-      "help": "Applies the two-stage magma evolution model of Vermeesch and Pease (2021), rather than the single-stage model"
-    },
-    "kde": {
-      "name": "KDE",
-      "help": "Adds a kernel density estimate of the Bowen-Fenner indices on a radial scale (only for Logratio plot)"
-    },
-    "bandwidth": {
-      "name": "Bandwidth",
-      "help": "The smoothing bandwidth to be used for the kernel density estimate"
-    },
-    "vermeeschPease": {
-      "name": "Decision",
-      "help": "Adds the decision boundary between the tholeiitic and calc-alkaline magma series to the plot (only for Ternary plot)"
-    },
-    "An": {
-      "name": "Anorthite",
-      "help": "normative anorthite concentrations (wt%)"
-    },
-    "Ab": {
-      "name": "Albite",
-      "help": "normative albite concentrations (wt%)"
-    },
-    "Or": {
-      "name": "Orthoclase",
-      "help": "normative orthoclase concentrations (wt%)"
-    },
-    "Cr": {
-      "name": "Cr",
-      "help": "Chromium concentrations (ppm)"
-    },
-    "Th": {
-      "name": "Th",
-      "help": "Thorium concentrations (ppm)"
-    },
-    "Nb": {
-      "name": "Nb",
-      "help": "Niobium concentrations (ppm)"
-    },
-    "La": {
-      "name": "La",
-      "help": "Lathanum concentrations (ppm)"
-    },
-    "Yb": {
-      "name": "Yb",
-      "help": "Ytterbium concentrations (ppm)"
-    },
-    "La_n": {
-      "name": "La",
-      "help": "Chondritic normalised lathanum concentrations"
-    },
-    "Yb_n": {
-      "name": "Yb",
-      "help": "Chondritic normalised ytterbium concentrations (ppm)"
-    },
-    "Rb": {
-      "name": "Rb",
-      "help": "Rubidium concentrations (ppm)"
-    },
-    "Ta": {
-      "name": "Ta",
-      "help": "Tantalum concentrations (ppm)"
-    },
-    "Sr": {
-      "name": "Sr",
-      "help": "Strontiumium concentrations (ppm)"
-    },
-    "Y_SrY": {
-      "name": "Y",
-      "help": "Yttrium concentrations (ppm)"
-    },
-    "Co": {
-      "name": "Co",
-      "help": "Cobalt concentrations (ppm)"
-    }
-  },
-  "optiongroups": {
-    "plot": {
-      "@title": {
-        "name": "Plot options",
-        "help": "Options controlling how the plot looks"
-      },
-      "lwd": {
-        "name": "Point line width",
-        "help": "The line width the points are drawn with, default is 1.0"
-      },
-      "cex": {
-        "name": "Point size",
-        "help": "Magnification factor for the points"
-      },
-      "pch": {
-        "name": "Point symbol",
-        "help": "Plotting symbol to use. Between 0 and 25 for standard symbols or 32 and 127 for ASCII characters"
-      },
-      "bg": {
-        "name": "Secondary point color",
-        "help": "Symbols between 21 and 25 have two colours; this is the second one."
-      },
-      "col": {
-        "name": "Point colour",
-        "help": "Main colour of the points drawn"
-      }
-    },
-    "decisionLine": {
-      "@title": {
-        "name": "Decision boundary options",
-        "help": "Options controlling the look of the decision boundary for AFM or ATM diagrams"
-      },
-      "dlwd": {
-        "name": "Line width"
-      },
-      "dcol": {
-        "name": "Line colour"
-      }
-    }
-  },
-  "types": {
-    "tizry_type": {
-      "LDA": {
-        "name": "LDA",
-        "help": "Linear Discriminant Analysis"
-      },
-      "QDA": {
-        "name": "QDA",
-        "help": "Quadratic Discriminant Analysis"
-      },
-      "Pearce": {
-        "name": "Pearce",
-        "help": "The nominal decision boundaries of Pearce and Cann (1973)"
-      }
-    },
-    "proportion": {
-      "wt%": {
-        "name": "weight %",
-        "help": "percentage by weight"
-      },
-      "ppm": {
-        "name": "ppm",
-        "help": "Parts per million"
-      }
-    },
-    "proportion_TiO2": {
-      "wt%": {
-        "name": "weight %",
-        "help": "percentage by weight"
-      },
-      "ppm": {
-        "name": "ppm",
-        "help": "Parts per million"
-      }
-    },
-    "bandwidth": {
-      "nrd0": {
-        "name": "Silverman",
-        "help": "Silverman's rule of thumb"
-      },
-      "nrd": {
-        "name": "Scott",
-        "help": "Scott's variation of Silverman's rule of thumb"
-      },
-      "ucv": {
-        "name": "UCV",
-        "help": "Unbiased cross-validation"
-      },
-      "bcv": {
-        "name": "BCV",
-        "help": "Biased cross-validation"
-      },
-      "SJ": {
-        "name": "Sheather & Jones",
-        "help": "Using pilot estimation of derivatives"
-      }
-    }
-  }
 }
