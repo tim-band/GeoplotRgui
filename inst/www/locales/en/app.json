@@ -6,13 +6,13 @@
 	    "name": "Ti-V",
 	    "help": "Ti-V tectonic discrimination diagram"
 	},
-	"ZrTi": {
-	    "name": "Zr-Ti",
-	    "help": "The Zr vs. Ti and Ti vs. Zr basalt discrimination diagrams of Pearce and Cann (1973), and Dilek and Furnes (2009), respectively."
-	},
 	"TiZrY": {
 	    "name": "Ti-Zr-Y",
 	    "help": "Ti-Zr-Y tectonic discrimination diagram"
+	},
+	"ZrTi": {
+	    "name": "Zr-Ti",
+	    "help": "The Zr vs. Ti and Ti vs. Zr basalt discrimination diagrams of Pearce and Cann (1973), and Dilek and Furnes (2009), respectively."
 	},
 	"TAS": {
 	    "name": "TAS",
@@ -258,6 +258,24 @@
 	    },
 	    "dcol": {
 		"name": "Line colour"
+	    }
+	},
+	"BF": {
+	    "@title": {
+		"name": "Bowen-Fenner index",
+		"help": "Options controlling the visualisation of the Bowen-Fenner index."
+	    },
+	    "kde": {
+		"name": "KDE",
+		"help": "Add a kernel density estimate to the logratio plot."
+	    },
+	    "bw": {
+		"name": "Bandwidth",
+		"help": "Specify the algorithm to calculate the kernel bandwidth."
+	    },
+	    "decision": {
+		"name": "Decision boundary",
+		"help": "Mark BF=0 as a line"
 	    }
 	},
 	"labels": {

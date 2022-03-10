@@ -31,12 +31,9 @@ functions <- list(
       F="F",
       M="M",
       ternary="ternaryLogratio",
-      twostage="twoStage",
-      kde="kde",
-      bw="bandwidth",
-      decision="vermeeschPease"
+      twostage="twoStage"
     ),
-    optiongroups=c("plot", "decisionLine","labels")
+    optiongroups=c("plot","decisionLine","labels","BF")
   ),
   AnAbOr=list(
     params=list(
@@ -51,12 +48,9 @@ functions <- list(
       A="A",
       T="T",
       M="M",
-      ternary="ternaryLogratio",
-      kde="kde",
-      bw="bandwidth",
-      decision="vermeeschPease"
+      ternary="ternaryLogratio"
     ),
-    optiongroups=c("plot", "decisionLine","labels")
+    optiongroups=c("plot","decisionLine","labels","BF")
   ),
   TAS=list(
     params=list(
@@ -184,7 +178,6 @@ params <- list(
   ternaryLogratio=list(type="b", data="true"),
   twoStage=list(type="b", data="false"),
   kde=list(type="b", data="false"),
-  bandwidth=list(type="bandwidth", data="bandwidth"),
   vermeeschPease=list(type="b", data="true"),
   # AnAbOr
   An=list(type="weightCol", data="An"),
@@ -238,13 +231,18 @@ optiongroups <- list(
   plot=list(
     cex=list(type="f"),
     lwd=list(type="u8"),
-    bg=list(type="color", initial='#666'),
-    pch=list(type="u8"),
+    #bg=list(type="color", initial=NULL),
+    pch=list(type="u8", initial=21),
     col=list(type="color", initial='#000')
   ),
   decisionLine=list(
-    dlwd=list(type="u8", initial=1.5),
-    dcol=list(type="color", initial="blue")
+    dlwd=list(type="u8", initial=1.5)#,
+    #dcol=list(type="color", initial="blue")
+  ),
+  BF=list(
+      kde=list(type="b", initial=TRUE),
+      bw=list(type="bandwidth", data="bandwidth"),
+      decision=list(type="b", initial=TRUE)
   ),
   labels=list(
     show.labels=list(type="b", initial=TRUE),
