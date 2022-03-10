@@ -36,7 +36,7 @@ functions <- list(
       bw="bandwidth",
       decision="vermeeschPease"
     ),
-    optiongroups=c("plot", "decisionLine")
+    optiongroups=c("plot", "decisionLine","labels")
   ),
   AnAbOr=list(
     params=list(
@@ -44,7 +44,7 @@ functions <- list(
       Ab="Ab",
       Or="Or"
     ),
-    optiongroups=c("plot")
+    optiongroups=c("plot","labels")
   ),
   ATM=list(
     params=list(
@@ -56,32 +56,30 @@ functions <- list(
       bw="bandwidth",
       decision="vermeeschPease"
     ),
-    optiongroups=c("plot", "decisionLine")
+    optiongroups=c("plot", "decisionLine","labels")
   ),
   TAS=list(
     params=list(
       Na2O="Na2O",
       K2O="K2O",
       SiO2="SiO2",
-      volcanic="volcanic",
-      show.labels="showlabels",
-      short="shortlabels"
+      volcanic="volcanic"
     ),
-    optiongroups=c("plot")
+    optiongroups=c("plot","labels")
   ),
   CrY=list(
     params=list(
       Cr="Cr",
       Y="Y"
     ),
-    optiongroups=c("plot")
+    optiongroups=c("plot","labels")
   ),
   LaYb=list(
     params=list(
       La_n="La_n",
       Yb_n="Yb_n"
     ),
-    optiongroups=c("plot")
+    optiongroups=c("plot","labels")
   ),
   NbLaYb=list(
     params=list(
@@ -89,21 +87,21 @@ functions <- list(
       La="La",
       Yb="Yb"
     ),
-    optiongroups=c("plot")
+    optiongroups=c("plot","labels")
   ),
   SrY=list(
     params=list(
       Sr="Sr",
       Y="Y_SrY"
     ),
-    optiongroups=c("plot")
+    optiongroups=c("plot","labels")
   ),
   ThCo=list(
     params=list(
       Th="Th",
       Co="Co"
     ),
-    optiongroups=c("plot")
+    optiongroups=c("plot","labels")
   ),
   ThNbLaYb=list(
     params=list(
@@ -112,7 +110,7 @@ functions <- list(
       La="La",
       Yb="Yb"
     ),
-    optiongroups=c("plot")
+    optiongroups=c("plot","labels")
   ),
   TiV=list(
     params=list(
@@ -122,7 +120,7 @@ functions <- list(
       type="tiv_type",
       ternary="tiv_plot"
     ),
-    optiongroups=c("plot")
+    optiongroups=c("plot","labels","labels")
   ),
   TiZrY=list(
     params=list(
@@ -133,14 +131,14 @@ functions <- list(
       type="tizry_type",
       ternary="tizry_plot"
     ),
-    optiongroups=c("plot")
+    optiongroups=c("plot","labels","labels")
   ),
   YbTa=list(
     params=list(
       Yb="Yb",
       Ta="Ta"
     ),
-    optiongroups=c("plot")
+    optiongroups=c("plot","labels")
   ),
   YbTaRb=list(
     params=list(
@@ -148,14 +146,14 @@ functions <- list(
       Ta="Ta",
       Rb="Rb"
     ),
-    optiongroups=c("plot")
+    optiongroups=c("plot","labels")
   ),
   YNb=list(
     params=list(
       Y="Y",
       Nb="Nb"
     ),
-    optiongroups=c("plot")
+    optiongroups=c("plot","labels")
   ),
   YNbRb=list(
     params=list(
@@ -163,7 +161,7 @@ functions <- list(
       Nb="Nb",
       Rb="Rb"
     ),
-    optiongroups=c("plot")
+    optiongroups=c("plot","labels")
   ),
   ZrTi=list(
     params=list(
@@ -173,7 +171,7 @@ functions <- list(
       type="zrti_type",
       ternary="zrti_plot"
     ),
-    optiongroups=c("plot")
+    optiongroups=c("plot","labels")
   )
 )
 
@@ -233,7 +231,7 @@ params <- list(
   # Ti-Zr
   zrti_units=list(type="subheader", data="zrti_units"),
   zrti_type=list(type="zrti_type", data="zrti_type"),
-  zrti_plot=list(type="b", data=TRUE)
+  zrti_plot=list(type="b", data=FALSE)
 )
 
 optiongroups <- list(
@@ -247,6 +245,10 @@ optiongroups <- list(
   decisionLine=list(
     dlwd=list(type="u8", initial=1.5),
     dcol=list(type="color", initial="blue")
+  ),
+  labels=list(
+    show.labels=list(type="b", initial=TRUE),
+    short=list(type="b", initial=TRUE)
   ),
   framework=list(
     autorefresh=list(type="b", initial=FALSE)

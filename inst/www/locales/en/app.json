@@ -96,14 +96,6 @@
 	    "name": "Ternary plot",
 	    "help": "Produce a ternary plot, rather than a bivariate ratio plot"
 	},
-	"tizr_type": {
-	    "name": "Analysis type",
-	    "help": "Type of analysis; LDA, QDA, Pearce or Dilek"
-	},
-	"tizr_plot": {
-	    "name": "Ternary plot",
-	    "help": "Produce a ternary plot, rather than a bivariate ratio plot"
-	},
 	"tizry_type": {
 	    "name": "Analysis type",
 	    "help": "Type of analysis; LDA, QDA or Pearce"
@@ -111,6 +103,14 @@
 	"tizry_plot": {
 	    "name": "Ternary plot",
 	    "help": "Produce a ternary plot, rather than a bivariate logratio plot"
+	},
+	"zrti_type": {
+	    "name": "Analysis type",
+	    "help": "Type of analysis; LDA, QDA, Pearce or Dilek"
+	},
+	"zrti_plot": {
+	    "name": "Ternary plot",
+	    "help": "Produce a ternary plot, rather than a bivariate ratio plot"
 	},
 	"Na2O": {
 	    "name": "Na₂O",
@@ -258,6 +258,18 @@
 	    },
 	    "dcol": {
 		"name": "Line colour"
+	    }
+	},
+	"labels": {
+	    "@title": {
+		"name": "Text labels",
+		"help": "Annotate the discrimination fields with long or short text labels."
+	    },
+	    "show.labels": {
+		"name": "Show labels"
+	    },
+	    "short": {
+		"name": "Use short labels"
 	    }
 	}
     },
