@@ -35,14 +35,6 @@ functions <- list(
     ),
     optiongroups=c("plot","decisionLine","labels","BF")
   ),
-  AnAbOr=list(
-    params=list(
-      An="An",
-      Ab="Ab",
-      Or="Or"
-    ),
-    optiongroups=c("plot","labels")
-  ),
   ATM=list(
     params=list(
       A="A",
@@ -51,6 +43,14 @@ functions <- list(
       ternary="ternaryLogratio"
     ),
     optiongroups=c("plot","decisionLine","labels","BF")
+  ),
+  AnAbOr=list(
+    params=list(
+      An="An",
+      Ab="Ab",
+      Or="Or"
+    ),
+    optiongroups=c("plot","labels")
   ),
   TAS=list(
     params=list(
@@ -114,7 +114,7 @@ functions <- list(
       type="tiv_type",
       ternary="tiv_plot"
     ),
-    optiongroups=c("plot","labels","labels")
+    optiongroups=c("plot","labels")
   ),
   TiZrY=list(
     params=list(
@@ -125,7 +125,7 @@ functions <- list(
       type="tizry_type",
       ternary="tizry_plot"
     ),
-    optiongroups=c("plot","labels","labels")
+    optiongroups=c("plot","labels")
   ),
   YbTa=list(
     params=list(
@@ -229,11 +229,11 @@ params <- list(
 
 optiongroups <- list(
   plot=list(
-    cex=list(type="f"),
-    lwd=list(type="u8"),
+    cex=list(type="f", initial=1),
+    lwd=list(type="u8", initial=1),
+    pch=list(type="u8", initial=21)#,
     #bg=list(type="color", initial=NULL),
-    pch=list(type="u8", initial=21),
-    col=list(type="color", initial='#000')
+    #col=list(type="color", initial='#000')
   ),
   decisionLine=list(
     dlwd=list(type="u8", initial=1.5)#,
