@@ -57,7 +57,7 @@ functions <- list(
       Na2O="Na2O",
       K2O="K2O",
       SiO2="SiO2",
-      volcanic="volcanic"
+      plutonic="plutonic"
     ),
     optiongroups=c("plot","labels")
   ),
@@ -176,7 +176,7 @@ params <- list(
   T=list(type="weightCol", data="T"),
   M=list(type="weightCol", data="M"),
   ternaryLogratio=list(type="b", data="true"),
-  twoStage=list(type="b", data="false"),
+  twoStage=list(type="b", data="true"),
   kde=list(type="b", data="false"),
   vermeeschPease=list(type="b", data="true"),
   # AnAbOr
@@ -193,7 +193,7 @@ params <- list(
   Na2O=list(type="weightCol", data="Na2O"),
   K2O=list(type="weightCol", data="K2O"),
   SiO2=list(type="weightCol", data="SiO2"),
-  volcanic=list(type="b", data="true"),
+  plutonic=list(type="b", data="false"),
   showlabels=list(type="b", data="true"),
   shortlabels=list(type="b", data="true"),
   # Rb-Ta (Pearce1984)
@@ -334,6 +334,7 @@ examples <- list(
     Ta=getColumn("Ta"),
     Co=getColumn("Co"),
     V=getColumn("V"),
+    tiv_type="Shervais",
     tizry_units=c("wt%", "ppm", "ppm"),
     tizry_type="LDA",
     zrti_units=c("ppm","wt%"),

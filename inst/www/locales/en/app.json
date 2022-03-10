@@ -102,7 +102,7 @@
 	},
 	"tizry_plot": {
 	    "name": "Ternary plot",
-	    "help": "Produce a ternary plot, rather than a bivariate logratio plot"
+	    "help": "Produce a ternary plot, rather than a bivariate logratio plot. Only applicable for LDA and QDA."
 	},
 	"zrti_type": {
 	    "name": "Analysis type",
@@ -110,7 +110,7 @@
 	},
 	"zrti_plot": {
 	    "name": "Ternary plot",
-	    "help": "Produce a ternary plot, rather than a bivariate ratio plot"
+	    "help": "Produce a ternary plot, rather than a bivariate ratio plot. Only applicable for LDA and QDA."
 	},
 	"Na2O": {
 	    "name": "Na₂O",
@@ -124,9 +124,9 @@
 	    "name": "SiO₂",
 	    "help":"concentrations of SiO₂"
 	},
-	"volcanic": {
-	    "name": "Volcanic",
-	    "help": "Volcanic (not plutonic) sample"
+	"plutonic": {
+	    "name": "Plutonic",
+	    "help": "If ticked, produces the diagram of Middlemost (1994), otherwise produces the diagram of Le Maitre et al. (2004)"
 	},
 	"showlabels": {
 	    "name": "Show labels",
@@ -135,10 +135,6 @@
 	"shortlabels": {
 	    "name": "Short labels",
 	    "help": "Abbreviate the field labels"
-	},
-	"volcanic": {
-	    "name": "Volcanic",
-	    "help": "Volcanic (not plutonic) sample"
 	},
 	"ternaryLogratio": {
 	    "name": "Ternary",
