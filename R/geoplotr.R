@@ -169,7 +169,9 @@ functions <- list(
     params=list(
       Zr="Zr",
       Ti="Ti",
-      units="zrti_units"
+      units="zrti_units",
+      type="zrti_type",
+      ternary="zrti_plot"
     ),
     optiongroups=c("plot")
   )
@@ -228,8 +230,10 @@ params <- list(
   tizry_units=list(type="subheader", data="tizry_units"),
   tizry_type=list(type="tizry_type", data="tizry_type"),
   tizry_plot=list(type="b", data=TRUE),
-  # Zr-Ti
-  zrti_units=list(type="subheader", data="zrti_units")
+  # Ti-Zr
+  zrti_units=list(type="subheader", data="zrti_units"),
+  zrti_type=list(type="zrti_type", data="zrti_type"),
+  zrti_plot=list(type="b", data=TRUE)
 )
 
 optiongroups <- list(
@@ -257,6 +261,10 @@ types <- list(
   tizry_type=list(
     kind="enum",
     values=c("LDA", "QDA", "Pearce")
+  ),
+  zrti_type=list(
+    kind="enum",
+    values=c("LDA", "QDA", "Pearce","Dilek")
   ),
   floatCol=list(
     kind="column",
@@ -326,9 +334,10 @@ examples <- list(
     Ta=getColumn("Ta"),
     Co=getColumn("Co"),
     V=getColumn("V"),
-    zrti_units=c("ppm","wt%"),
     tizry_units=c("wt%", "ppm", "ppm"),
     tizry_type="LDA",
+    zrti_units=c("ppm","wt%"),
+    zrti_type="QDA",
     La_n=c(100),
     Yb_n=c(10),
     Sr=c(1000),

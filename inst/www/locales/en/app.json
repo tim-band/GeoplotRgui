@@ -6,6 +6,10 @@
 	    "name": "Ti-V",
 	    "help": "Ti-V tectonic discrimination diagram"
 	},
+	"ZrTi": {
+	    "name": "Zr-Ti",
+	    "help": "The Zr vs. Ti and Ti vs. Zr basalt discrimination diagrams of Pearce and Cann (1973), and Dilek and Furnes (2009), respectively."
+	},
 	"TiZrY": {
 	    "name": "Ti-Zr-Y",
 	    "help": "Ti-Zr-Y tectonic discrimination diagram"
@@ -65,10 +69,6 @@
 	"YbTaRb": {
 	    "name": "Yb-Ta-Rb",
 	    "help": "Pearce et al. (1984) Yb-Ta-Rb diagram"
-	},
-	"ZrTi": {
-	    "name": "Ti-Zr",
-	    "help": "Zr vs Ti discrimination diagram of Dilek and Furnes (2009) for MORB, IAT, and boninites, modified after earlier workers."
 	}
     },
     "params" : {
@@ -93,6 +93,14 @@
 	    "help": "Type of analysis; LDA, QDA or Shervais"
 	},
 	"tiv_plot": {
+	    "name": "Ternary plot",
+	    "help": "Produce a ternary plot, rather than a bivariate ratio plot"
+	},
+	"tizr_type": {
+	    "name": "Analysis type",
+	    "help": "Type of analysis; LDA, QDA, Pearce or Dilek"
+	},
+	"tizr_plot": {
 	    "name": "Ternary plot",
 	    "help": "Produce a ternary plot, rather than a bivariate ratio plot"
 	},
