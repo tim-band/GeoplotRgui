@@ -46,6 +46,10 @@
 	    "name": "Hollocher Th-Nb-La-Yb",
 	    "help": "Discriminants for MORB, ocean island, and a variety of arc-type basalts, Hollocher et al. (2012)"
 	},
+	"QAPF": {
+	    "name": "QAPF",
+	    "help": "Streckeisen (1967)'s Quartz - Alkali feldspar - Plagioclase feldspar diagram for classification of felsic and intermediate plutonic rocks."
+	},
 	"SrY": {
 	    "name": "Sr/Y-Y",
 	    "help": "(Sr/Y) vs. Y diagram of Drummond (1990), which discriminates between Archean TTG suite and more modern adakites on the one hand, and classical island arcs on the other hand."

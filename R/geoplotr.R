@@ -83,6 +83,15 @@ functions <- list(
     ),
     optiongroups=c("plot","labels")
   ),
+  QAPF=list(
+      params=list(
+          Q="Qtz",
+          A="Aspar",
+          P="Pspar",
+          F="Foid"
+      ),
+      optiongroups=c("plot","labels")
+  ),
   SrY=list(
     params=list(
       Sr="Sr",
@@ -189,6 +198,17 @@ params <- list(
   # LaYb
   La_n=list(type="floatCol", data="La_n"),
   Yb_n=list(type="floatCol", data="Yb_n"),
+  # QAPF
+  Qtz=list(type="floatCol", data="Qtz"),
+  Aspar=list(type="floatCol", data="Aspar"),
+  Pspar=list(type="floatCol", data="Pspar"),
+  Foid=list(type="floatCol", data="Foid"),
+  # Rb-Ta (Pearce1984)  
+  Rb=list(type="floatCol", data="Rb"),
+  Ta=list(type="floatCol", data="Ta"),
+  # SrY
+  Sr=list(type="floatCol", data="Sr"),
+  Y_SrY=list(type="floatCol", data="Y_SrY"),
   # TAS
   Na2O=list(type="weightCol", data="Na2O"),
   K2O=list(type="weightCol", data="K2O"),
@@ -196,12 +216,6 @@ params <- list(
   plutonic=list(type="b", data="false"),
   showlabels=list(type="b", data="true"),
   shortlabels=list(type="b", data="true"),
-  # Rb-Ta (Pearce1984)
-  Rb=list(type="floatCol", data="Rb"),
-  Ta=list(type="floatCol", data="Ta"),
-  # SrY
-  Sr=list(type="floatCol", data="Sr"),
-  Y_SrY=list(type="floatCol", data="Y_SrY"),
   # ThCo
   Co=list(type="floatCol", data="Co"),
   # Th-Nb-La-Yb (Hollocher2012)
@@ -324,6 +338,10 @@ examples <- list(
     An=c(70,75,73),
     Ab=c(20,10,27),
     Or=c(10,15,0),
+    Qtz=c(50,40,0,0,80,60),
+    Aspar=c(10,20,50,0,0,20),
+    Pspar=c(40,40,50,20,20,20),
+    Foid=c(0,0,0,80,0,0),
     Cr=getColumn("Cr"),
     Y=getColumn("Y"),
     Th=getColumn("Th"),
@@ -409,6 +427,7 @@ GeoplotR <- function(host='0.0.0.0', port=NULL, daemonize=FALSE) {
       CrY = GeoplotR::CrY,
       LaYb = GeoplotR::LaYb,
       NbLaYb = GeoplotR::NbLaYb,
+      QAPF = GeoplotR::QAPF,
       SrY = GeoplotR::SrY,
       TAS = GeoplotR::TAS,
       ThCo = GeoplotR::ThCo,
