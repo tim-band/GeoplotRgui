@@ -160,7 +160,7 @@
 	    "name": "Bandwidth",
 	    "help": "The smoothing bandwidth to be used for the kernel density estimate"
 	},
-	"vermeeschPease": {
+	"BF": {
 	    "name": "Decision",
 	    "help": "Adds the decision boundary between the tholeiitic and calc-alkaline magma series to the plot (only for Ternary plot)"
 	},
