@@ -52,13 +52,39 @@ functions <- list(
     ),
     optiongroups=c("plot","labels")
   ),
-  cart=list(
+  cart_all=list(
+      params=list(
+          SiO2="SiO2", TiO2="TiO2", Al2O3="Al2O3",
+          Fe2O3="Fe2O3", FeO="FeO", CaO="CaO", MgO="MgO",
+          MnO="MnO", K2O="K2O", Na2O="Na2O", P2O5="P2O5",
+          La="La", Ce="Ce", Pr="Pr", Nd="Nd", Sm="Sm",
+          Eu="Eu", Gd="Gd", Tb="Tb", Dy="Dy", Ho="Ho",
+          Er="Er", Tm="Tm", Yb="Yb", Lu="Lu", Sc="Sc", V="V",
+          Cr="Cr", Co="Co", Ni="Ni", Cu="Cu", Zn="Zn",
+          Ga="Ga", Rb="Rb", Sr="Sr", Y="Y", Zr="Zr", Nb="Nb",
+          Sn="Sn", Cs="Cs", Ba="Ba", Hf="Hf", Ta="Ta",
+          Pb="Pb", Th="Th", U="U", NdNd="NdNd",
+          SrSr="SrSr", Pb64="Pb64", Pb74="Pb74", Pb84="Pb84"
+      ),
+      optiongroups=c("plot")
+  ),
+  cart_HFS=list(
+      params=list(
+          Ti="Ti_prop", La="La", Ce="Ce", Pr="Pr", Nd="Nd", Sm="Sm",
+          Eu="Eu", Gd="Gd", Tb="Tb", Dy="Dy", Ho="Ho",
+          Er="Er", Tm="Tm", Yb="Yb", Lu="Lu", Sc="Sc", Y="Y",
+          Zr="Zr", Nb="Nb", Hf="Hf", Ta="Ta", Pb="Pb", Th="Th", U="U",
+          NdNd="NdNd", SrSr="SrSr", Pb64="Pb64", Pb74="Pb74",
+          Pb84="Pb84", units="cart_HFS_units"
+      ),
+      optiongroups=c("plot")
+  ),
+  cart_ratios=list(
       params=list(
           Ti="Ti_prop", La="La", Ce="Ce", Nd="Nd", Sm="Sm", Eu="Eu", Gd="Gd",
           Tb="Tb", Dy="Dy", Ho="Ho", Er="Er", Tm="Tm", Yb="Yb", Lu="Lu",
           Sc="Sc", V="V", Sr="Sr", Y="Y", Zr="Zr", Nb="Nb", Hf="Hf", Ta="Ta",
-          Th="Th", U="U",
-          units="cart_units"
+          Th="Th", U="U", units="cart_ratios_units"
       ),
       optiongroups=c("plot")
   ),
@@ -285,7 +311,8 @@ params <- list(
   zrti_type=list(type="zrti_type", data="zrti_type"),
   zrti_plot=list(type="b", data=FALSE),
   # cart
-  cart_units=list(type="subheader", data="cart_units")
+  cart_HFS_units=list(type="subheader", data="cart_HFS_units"),
+  cart_ratios_units=list(type="subheader", data="cart_ratios_units")
 )
 
 optiongroups <- list(
@@ -421,7 +448,8 @@ examples <- list(
     tizry_type="LDA",
     zrti_units=c("ppm","wt%"),
     zrti_type="QDA",
-    cart_units=c("wt%"),
+    cart_HFS_units=c("ppm"),
+    cart_ratios_units=c("wt%"),
     true=TRUE,
     false= FALSE,
     bandwidth="nrd0"
@@ -446,8 +474,42 @@ TiZrY <- function(Ti, Zr, Y, units, ...) {
   GeoplotR::TiZrY(Ti, Zr, Y, ...)
 }
 
-cart <- function(Ti,La,Ce,Nd,Sm,Eu,Gd,Tb,Dy,Ho,Er,Tm,Yb,Lu,
-                 Sc,V,Sr,Y,Zr,Nb,Hf,Ta,Th,U,units,...){
+cart_all <- function(SiO2,TiO2,Al2O3,Fe2O3,FeO,CaO,MgO,
+                     MnO,K2O,Na2O,P2O5,La,Ce,Pr,Nd,Sm,
+                     Eu,Gd,Tb,Dy,Ho,Er,Tm,Yb,Lu,Sc,V,
+                     Cr,Co,Ni,Cu,Zn,Ga,Rb,Sr,Y,Zr,Nb,
+                     Sn,Cs,Ba,Hf,Ta,Pb,Th,U,NdNd,
+                     SrSr,Pb64,Pb74,Pb84,...){
+  dat <- data.frame(SiO2=SiO2, TiO2=TiO2, Al2O3=Al2O3,
+                    Fe2O3=Fe2O3, FeO=FeO, CaO=CaO, MgO=MgO,
+                    MnO=MnO, K2O=K2O, Na2O=Na2O, P2O5=P2O5,
+                    La=La, Ce=Ce, Pr=Pr, Nd=Nd, Sm=Sm,
+                    Eu=Eu, Gd=Gd, Tb=Tb, Dy=Dy, Ho=Ho,
+                    Er=Er, Tm=Tm, Yb=Yb, Lu=Lu, Sc=Sc, V=V,
+                    Cr=Cr, Co=Co, Ni=Ni, Cu=Cu, Zn=Zn,
+                    Ga=Ga, Rb=Rb, Sr=Sr, Y=Y, Zr=Zr, Nb=Nb,
+                    Sn=Sn, Cs=Cs, Ba=Ba, Hf=Hf, Ta=Ta,
+                    Pb=Pb, Th=Th, U=U, 'Nd143/Nd144'=NdNd,
+                    'Sr87/Sr86'=SrSr, 'Pb206/Pb204'=Pb64,
+                    'Pb207/Pb204'=Pb74, 'Pb208/Pb204'=Pb84,
+                    check.names=FALSE)
+  GeoplotR::cart(dat,option=1,plot=TRUE,...)
+}
+cart_HFS <- function(Ti,La,Ce,Pr,Nd,Sm,Gd,Tb,Dy,Ho,Er,Tm,Yb,Lu,Sc,Y,Zr,
+                     Nb,Hf,Ta,Pb,Th,U,NdNd,SrSr,Pb64,Pb74,Pb84,units,...){
+  if (units[[1]] == "ppm") {
+    TiO2 <- GeoplotR::ppm2wtpct(Ti, "TiO2")
+  }
+  dat <- data.frame(TiO2=TiO2,La=La,Ce=Ce,Pr=Pr,Nd=Nd,Sm=Sm,Gd=Gd,
+                    Tb=Tb,Dy=Dy,Ho=Ho,Er=Er,Tm=Tm,Yb=Yb,Lu=Lu,Sc=Sc,
+                    Y=Y,Zr=Zr,Nb=Nb,Hf=Hf,Ta=Ta,Pb=Pb,Th=Th,U=U,
+                    "Nd143/Nd144"=NdNd,"Sr87/Sr86"=SrSr,
+                    "Pb206/Pb204"=Pb64,"Pb207/Pb204"=Pb74,
+                    "Pb208/Pb204"=Pb84,check.names=FALSE)
+  GeoplotR::cart(dat,option=2,plot=TRUE,...)
+}
+cart_ratios <- function(Ti,La,Ce,Nd,Sm,Eu,Gd,Tb,Dy,Ho,Er,Tm,Yb,Lu,
+                        Sc,V,Sr,Y,Zr,Nb,Hf,Ta,Th,U,units,...){
   if (units[[1]] == "wt%") {
     Ti <- GeoplotR::wtpct2ppm(Ti, "TiO2")
   }
@@ -506,7 +568,9 @@ GeoplotR <- function(host='0.0.0.0', port=NULL, daemonize=FALSE) {
       ThNbLaYb = GeoplotR::ThNbLaYb,
       TiV = TiV,
       TiZrY = TiZrY,
-      cart = cart,
+      cart_all = cart_all,
+      cart_HFS = cart_HFS,
+      cart_ratios = cart_ratios,
       YbTa = GeoplotR::YbTa,
       YbTaRb = GeoplotR::YbTaRb,
       YNb = GeoplotR::YNb,

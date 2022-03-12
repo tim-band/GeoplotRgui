@@ -2,9 +2,17 @@
   "title": "GeoplotR",
   "homelink": "https://github.com/pvermees/GeoplotR",
     "functions": {
-	"cart": {
-	    "name": "decision tree",
-	    "help": "decision tree for tectonic discrimination of basalts (Vermeesch, 2006, 2007)"
+	"cart_all": {
+	    "name": "CART (all)",
+	    "help": "decision tree for tectonic discrimination of basalts using major elements, trace elements, and isotopic ratios (Vermeesch, 2006)"
+	},
+	"cart_HFS": {
+	    "name": "CART (HFS)",
+	    "help": "decision tree for tectonic discrimination of basalts using only high field strenght elements (Vermeesch, 2006)"
+	},
+	"cart_ratios": {
+	    "name": "CART (ratios)",
+	    "help": "decision tree for tectonic discrimination of basalts using ratios of trace elements (Vermeesch, 2007)"
 	},
 	"TiV": {
 	    "name": "Ti-V",
@@ -121,16 +129,22 @@
 	    "help": "Produce a ternary plot, rather than a bivariate ratio plot. Only applicable for LDA and QDA."
 	},
 	"Na2O": {
-	    "name": "Na₂O",
-	    "help": "concentrations of Na₂O"
+	    "name": "Na₂O"
 	},
 	"K2O": {
-	    "name": "K₂O",
-	    "help": "concentrations of K₂O"
+	    "name": "K₂O"
 	},
 	"SiO2": {
-	    "name": "SiO₂",
-	    "help":"concentrations of SiO₂"
+	    "name": "SiO₂"
+	},
+	"Al2O3": {
+	    "name": "Al₂O₃"
+	},
+	"Fe2O3": {
+	    "name": "Fe₂O₃"
+	},
+	"P2O5": {
+	    "name": "P₂O₅"
 	},
 	"plutonic": {
 	    "name": "Plutonic",
@@ -227,6 +241,21 @@
 	"Co": {
 	    "name": "Co",
 	    "help": "Cobalt concentrations (ppm)"
+	},
+	"NdNd": {
+	    "name": "¹⁴³Nd/¹⁴⁴Nd"
+	},
+	"SrSr": {
+	    "name": "⁸⁷Sr/⁸⁶Sr"
+	},
+	"Pb64": {
+	    "name": "²⁰⁶Pb/²⁰⁴Pb"
+	},
+	"Pb74": {
+	    "name": "²⁰⁷Pb/²⁰⁴Pb"
+	},
+	"Pb84": {
+	    "name": "²⁰⁸Pb/²⁰⁴Pb"
 	}
     },
     "optiongroups": {
