@@ -52,36 +52,43 @@ functions <- list(
     ),
     optiongroups=c("plot","labels")
   ),
-  TAS=list(
-    params=list(
-      Na2O="Na2O",
-      K2O="K2O",
-      SiO2="SiO2",
-      plutonic="plutonic"
-    ),
-    optiongroups=c("plot","labels")
+  treeALL=list(
+      params=list(
+          SiO2="SiO2", TiO2="TiO2", Al2O3="Al2O3",
+          Fe2O3="Fe2O3", FeO="FeO", CaO="CaO", MgO="MgO",
+          MnO="MnO", K2O="K2O", Na2O="Na2O", P2O5="P2O5",
+          La="La", Ce="Ce", Pr="Pr", Nd="Nd", Sm="Sm",
+          Eu="Eu", Gd="Gd", Tb="Tb", Dy="Dy", Ho="Ho",
+          Er="Er", Tm="Tm", Yb="Yb", Lu="Lu", Sc="Sc", V="V",
+          Cr="Cr", Co="Co", Ni="Ni", Cu="Cu", Zn="Zn",
+          Ga="Ga", Rb="Rb", Sr="Sr", Y="Y", Zr="Zr", Nb="Nb",
+          Sn="Sn", Cs="Cs", Ba="Ba", Hf="Hf", Ta="Ta",
+          Pb="Pb", Th="Th", U="U", NdNd="NdNd",
+          SrSr="SrSr", Pb64="Pb64", Pb74="Pb74", Pb84="Pb84"
+      ),
+      optiongroups=c("plot")
   ),
   CrY=list(
-    params=list(
-      Cr="Cr",
-      Y="Y"
-    ),
-    optiongroups=c("plot","labels")
+      params=list(
+          Cr="Cr",
+          Y="Y"
+      ),
+      optiongroups=c("plot","labels")
   ),
   LaYb=list(
-    params=list(
-      La_n="La_n",
-      Yb_n="Yb_n"
-    ),
-    optiongroups=c("plot","labels")
+      params=list(
+          La_n="La_n",
+          Yb_n="Yb_n"
+      ),
+      optiongroups=c("plot","labels")
   ),
   NbLaYb=list(
-    params=list(
-      Nb="Nb",
-      La="La",
-      Yb="Yb"
-    ),
-    optiongroups=c("plot","labels")
+      params=list(
+          Nb="Nb",
+          La="La",
+          Yb="Yb"
+      ),
+      optiongroups=c("plot","labels")
   ),
   QAPF=list(
       params=list(
@@ -94,95 +101,104 @@ functions <- list(
       optiongroups=c("plot","labels")
   ),
   SrY=list(
-    params=list(
-      Sr="Sr",
-      Y="Y_SrY"
-    ),
-    optiongroups=c("plot","labels")
+      params=list(
+          Sr="Sr",
+          Y="Y_SrY"
+      ),
+      optiongroups=c("plot","labels")
+  ),
+  TAS=list(
+      params=list(
+          Na2O="Na2O",
+          K2O="K2O",
+          SiO2="SiO2",
+          plutonic="plutonic"
+      ),
+      optiongroups=c("plot","labels")
   ),
   ThCo=list(
-    params=list(
-      Th="Th",
-      Co="Co"
-    ),
-    optiongroups=c("plot","labels")
+      params=list(
+          Th="Th",
+          Co="Co"
+      ),
+      optiongroups=c("plot","labels")
   ),
   ThNbLaYb=list(
-    params=list(
-      Th="Th",
-      Nb="Nb",
-      La="La",
-      Yb="Yb"
-    ),
-    optiongroups=c("plot","labels")
+      params=list(
+          Th="Th",
+          Nb="Nb",
+          La="La",
+          Yb="Yb"
+      ),
+      optiongroups=c("plot","labels")
   ),
   TiV=list(
-    params=list(
-      Ti="Ti_prop",
-      V="V",
-      units="tiv_units",
-      type="tiv_type",
-      ternary="tiv_plot"
-    ),
-    optiongroups=c("plot","labels")
+      params=list(
+          Ti="Ti_prop",
+          V="V",
+          units="tiv_units",
+          type="tiv_type",
+          ternary="tiv_plot"
+      ),
+      optiongroups=c("plot","labels")
   ),
   TiZrY=list(
-    params=list(
-      Ti="Ti_prop",
-      Zr="Zr",
-      Y="Y",
-      units="tizry_units",
-      type="tizry_type",
-      ternary="tizry_plot"
-    ),
-    optiongroups=c("plot","labels")
+      params=list(
+          Ti="Ti_prop",
+          Zr="Zr",
+          Y="Y",
+          units="tizry_units",
+          type="tizry_type",
+          ternary="tizry_plot"
+      ),
+      optiongroups=c("plot","labels")
   ),
   YbTa=list(
-    params=list(
-      Yb="Yb",
-      Ta="Ta"
-    ),
-    optiongroups=c("plot","labels")
+      params=list(
+          Yb="Yb",
+          Ta="Ta"
+      ),
+      optiongroups=c("plot","labels")
   ),
   YbTaRb=list(
-    params=list(
-      Yb="Yb",
-      Ta="Ta",
-      Rb="Rb"
-    ),
-    optiongroups=c("plot","labels")
+      params=list(
+          Yb="Yb",
+          Ta="Ta",
+          Rb="Rb"
+      ),
+      optiongroups=c("plot","labels")
   ),
   YNb=list(
-    params=list(
-      Y="Y",
-      Nb="Nb"
-    ),
-    optiongroups=c("plot","labels")
+      params=list(
+          Y="Y",
+          Nb="Nb"
+      ),
+      optiongroups=c("plot","labels")
   ),
   YNbRb=list(
-    params=list(
-      Y="Y",
-      Nb="Nb",
-      Rb="Rb"
-    ),
-    optiongroups=c("plot","labels")
+      params=list(
+          Y="Y",
+          Nb="Nb",
+          Rb="Rb"
+      ),
+      optiongroups=c("plot","labels")
   ),
   ZrTi=list(
-    params=list(
-      Zr="Zr",
-      Ti="Ti_prop",
-      units="zrti_units",
-      type="zrti_type",
-      ternary="zrti_plot"
-    ),
-    optiongroups=c("plot","labels")
+      params=list(
+          Zr="Zr",
+          Ti="Ti_prop",
+          units="zrti_units",
+          type="zrti_type",
+          ternary="zrti_plot"
+      ),
+      optiongroups=c("plot","labels")
   )
 )
 
 params <- list(
   SiO2=list(type="floatCol", data="SiO2"),
   TiO2=list(type="floatCol", data="TiO2"),
-  Al2O3=list(type="floatCol", data="Al203"),
+  Al2O3=list(type="floatCol", data="Al2O3"),
   Fe2O3=list(type="floatCol", data="Fe2O3"),
   FeO=list(type="floatCol", data="FeO"),
   CaO=list(type="floatCol", data="CaO"),
@@ -432,6 +448,27 @@ TiZrY <- function(Ti, Zr, Y, units, ...) {
   }
   GeoplotR::TiZrY(Ti, Zr, Y, ...)
 }
+
+treeALL <- function(SiO2,TiO2,Al2O3,Fe2O3,FeO,CaO,MgO,
+                    MnO,K2O,Na2O,P2O5,La,Ce,Pr,Nd,Sm,
+                    Eu,Gd,Tb,Dy,Ho,Er,Tm,Yb,Lu,Sc,V,
+                    Cr,Co,Ni,Cu,Zn,Ga,Rb,Sr,Y,Zr,Nb,
+                    Sn,Cs,Ba,Hf,Ta,Pb,Th,U,NdNd,SrSr,
+                    Pb64,Pb74,Pb84,...){
+  dat <- cbind(SiO2,TiO2,Al2O3,Fe2O3,FeO,CaO,MgO,
+               MnO,K2O,Na2O,P2O5,La,Ce,Pr,Nd,Sm,
+               Eu,Gd,Tb,Dy,Ho,Er,Tm,Yb,Lu,Sc,V,
+               Cr,Co,Ni,Cu,Zn,Ga,Rb,Sr,Y,Zr,Nb,
+               Sn,Cs,Ba,Hf,Ta,Pb,Th,U,NdNd,SrSr,
+               Pb64,Pb74,Pb84)
+  colnames(dat) <- c("SiO2","TiO2","Al2O3","Fe2O3","FeO","CaO","MgO","
+               MnO","K2O","Na2O","P2O5","La","Ce","Pr","Nd","Sm","
+               Eu","Gd","Tb","Dy","Ho","Er","Tm","Yb","Lu","Sc","V","
+               Cr","Co","Ni","Cu","Zn","Ga","Rb","Sr","Y","Zr","Nb","
+               Sn","Cs","Ba","Hf","Ta","Pb","Th","U","Nd143/Nd144",
+               "Sr87/Sr86","Pb206/Pb204","Pb207/Pb204","Pb208/Pb204")
+  GeoplotR::cart(dat,option=1,plot=TRUE,...)
+}
 ZrTi <- function(Zr, Ti, units, ...) {
   if (units[[1]] == "wt%") {
     Zr <- GeoplotR::wtpct2ppm(Zr, "ZrO2")
@@ -482,6 +519,7 @@ GeoplotR <- function(host='0.0.0.0', port=NULL, daemonize=FALSE) {
       ThNbLaYb = GeoplotR::ThNbLaYb,
       TiV = TiV,
       TiZrY = TiZrY,
+      treeALL = treeALL,
       YbTa = GeoplotR::YbTa,
       YbTaRb = GeoplotR::YbTaRb,
       YNb = GeoplotR::YNb,
