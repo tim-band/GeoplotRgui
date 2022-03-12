@@ -39,11 +39,11 @@
 	    "help": "(La/Yb)_N vs. Yb_N diagram of Martin (1986), which discriminates between Archean TTG suite and more modern adakites on the one hand, and classical island arcs on the other hand."
 	},
 	"NbLaYb": {
-	    "name": "Hollocher Nb-La-Yb",
+	    "name": "Nb-La-Yb",
 	    "help": "Discriminants for MORB, ocean island, and a variety of arc-type basalts, Hollocher et al. (2012)"
 	},
 	"ThNbLaYb": {
-	    "name": "Hollocher Th-Nb-La-Yb",
+	    "name": "Th-Nb-La-Yb",
 	    "help": "Discriminants for MORB, ocean island, and a variety of arc-type basalts, Hollocher et al. (2012)"
 	},
 	"QAPF": {
@@ -131,6 +131,10 @@
 	"plutonic": {
 	    "name": "Plutonic",
 	    "help": "If ticked, produces the diagram of Middlemost (1994), otherwise produces the diagram of Le Maitre et al. (2004)"
+	},
+	"volcanic": {
+	    "name": "Volcanic",
+	    "help": "If ticked, produces the volcanic QAPF diagram of Le Maitre et al. (2004), otherwise produces the diagram of Streckeisen (1967)"
 	},
 	"showlabels": {
 	    "name": "Show labels",

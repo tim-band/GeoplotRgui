@@ -88,7 +88,8 @@ functions <- list(
           Q="Qtz",
           A="Aspar",
           P="Pspar",
-          F="Foid"
+          F="Foid",
+          volcanic="volcanic"
       ),
       optiongroups=c("plot","labels")
   ),
@@ -203,6 +204,7 @@ params <- list(
   Aspar=list(type="floatCol", data="Aspar"),
   Pspar=list(type="floatCol", data="Pspar"),
   Foid=list(type="floatCol", data="Foid"),
+  volcanic=list(type="b", data="false"),
   # Rb-Ta (Pearce1984)  
   Rb=list(type="floatCol", data="Rb"),
   Ta=list(type="floatCol", data="Ta"),
