@@ -52,19 +52,13 @@ functions <- list(
     ),
     optiongroups=c("plot","labels")
   ),
-  treeALL=list(
+  cart=list(
       params=list(
-          SiO2="SiO2", TiO2="TiO2", Al2O3="Al2O3",
-          Fe2O3="Fe2O3", FeO="FeO", CaO="CaO", MgO="MgO",
-          MnO="MnO", K2O="K2O", Na2O="Na2O", P2O5="P2O5",
-          La="La", Ce="Ce", Pr="Pr", Nd="Nd", Sm="Sm",
-          Eu="Eu", Gd="Gd", Tb="Tb", Dy="Dy", Ho="Ho",
-          Er="Er", Tm="Tm", Yb="Yb", Lu="Lu", Sc="Sc", V="V",
-          Cr="Cr", Co="Co", Ni="Ni", Cu="Cu", Zn="Zn",
-          Ga="Ga", Rb="Rb", Sr="Sr", Y="Y", Zr="Zr", Nb="Nb",
-          Sn="Sn", Cs="Cs", Ba="Ba", Hf="Hf", Ta="Ta",
-          Pb="Pb", Th="Th", U="U", NdNd="NdNd",
-          SrSr="SrSr", Pb64="Pb64", Pb74="Pb74", Pb84="Pb84"
+          Ti="Ti_prop", La="La", Ce="Ce", Nd="Nd", Sm="Sm", Eu="Eu", Gd="Gd",
+          Tb="Tb", Dy="Dy", Ho="Ho", Er="Er", Tm="Tm", Yb="Yb", Lu="Lu",
+          Sc="Sc", V="V", Sr="Sr", Y="Y", Zr="Zr", Nb="Nb", Hf="Hf", Ta="Ta",
+          Th="Th", U="U",
+          units="cart_units"
       ),
       optiongroups=c("plot")
   ),
@@ -289,7 +283,9 @@ params <- list(
   # Ti-Zr
   zrti_units=list(type="subheader", data="zrti_units"),
   zrti_type=list(type="zrti_type", data="zrti_type"),
-  zrti_plot=list(type="b", data=FALSE)
+  zrti_plot=list(type="b", data=FALSE),
+  # cart
+  cart_units=list(type="subheader", data="cart_units")
 )
 
 optiongroups <- list(
@@ -425,6 +421,7 @@ examples <- list(
     tizry_type="LDA",
     zrti_units=c("ppm","wt%"),
     zrti_type="QDA",
+    cart_units=c("wt%"),
     true=TRUE,
     false= FALSE,
     bandwidth="nrd0"
@@ -449,25 +446,15 @@ TiZrY <- function(Ti, Zr, Y, units, ...) {
   GeoplotR::TiZrY(Ti, Zr, Y, ...)
 }
 
-treeALL <- function(SiO2,TiO2,Al2O3,Fe2O3,FeO,CaO,MgO,
-                    MnO,K2O,Na2O,P2O5,La,Ce,Pr,Nd,Sm,
-                    Eu,Gd,Tb,Dy,Ho,Er,Tm,Yb,Lu,Sc,V,
-                    Cr,Co,Ni,Cu,Zn,Ga,Rb,Sr,Y,Zr,Nb,
-                    Sn,Cs,Ba,Hf,Ta,Pb,Th,U,NdNd,SrSr,
-                    Pb64,Pb74,Pb84,...){
-  dat <- cbind(SiO2,TiO2,Al2O3,Fe2O3,FeO,CaO,MgO,
-               MnO,K2O,Na2O,P2O5,La,Ce,Pr,Nd,Sm,
-               Eu,Gd,Tb,Dy,Ho,Er,Tm,Yb,Lu,Sc,V,
-               Cr,Co,Ni,Cu,Zn,Ga,Rb,Sr,Y,Zr,Nb,
-               Sn,Cs,Ba,Hf,Ta,Pb,Th,U,NdNd,SrSr,
-               Pb64,Pb74,Pb84)
-  colnames(dat) <- c("SiO2","TiO2","Al2O3","Fe2O3","FeO","CaO","MgO","
-               MnO","K2O","Na2O","P2O5","La","Ce","Pr","Nd","Sm","
-               Eu","Gd","Tb","Dy","Ho","Er","Tm","Yb","Lu","Sc","V","
-               Cr","Co","Ni","Cu","Zn","Ga","Rb","Sr","Y","Zr","Nb","
-               Sn","Cs","Ba","Hf","Ta","Pb","Th","U","Nd143/Nd144",
-               "Sr87/Sr86","Pb206/Pb204","Pb207/Pb204","Pb208/Pb204")
-  GeoplotR::cart(dat,option=1,plot=TRUE,...)
+cart <- function(Ti,La,Ce,Nd,Sm,Eu,Gd,Tb,Dy,Ho,Er,Tm,Yb,Lu,
+                 Sc,V,Sr,Y,Zr,Nb,Hf,Ta,Th,U,units,...){
+  if (units[[1]] == "wt%") {
+    Ti <- GeoplotR::wtpct2ppm(Ti, "TiO2")
+  }
+  dat <- data.frame(Ti=Ti,La=La,Ce=Ce,Nd=Nd,Sm=Sm,Eu=Eu,Gd=Gd,Tb=Tb,
+                    Dy=Dy,Ho=Ho,Er=Er,Tm=Tm,Yb=Yb,Lu=Lu,Sc=Sc,V=V,
+                    Sr=Sr,Y=Y,Zr=Zr,Nb=Nb,Hf=Hf,Ta=Ta,Th=Th,U=U)
+  GeoplotR::cart(dat,option=3,plot=TRUE,...)
 }
 ZrTi <- function(Zr, Ti, units, ...) {
   if (units[[1]] == "wt%") {
@@ -519,7 +506,7 @@ GeoplotR <- function(host='0.0.0.0', port=NULL, daemonize=FALSE) {
       ThNbLaYb = GeoplotR::ThNbLaYb,
       TiV = TiV,
       TiZrY = TiZrY,
-      treeALL = treeALL,
+      cart = cart,
       YbTa = GeoplotR::YbTa,
       YbTaRb = GeoplotR::YbTaRb,
       YNb = GeoplotR::YNb,

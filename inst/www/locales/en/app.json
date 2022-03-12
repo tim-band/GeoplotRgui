@@ -2,9 +2,9 @@
   "title": "GeoplotR",
   "homelink": "https://github.com/pvermees/GeoplotR",
     "functions": {
-	"treeALL": {
-	    "name": "full tree",
-	    "help": "decision tree with SiO2,TiO2,Al2O3,Fe2O3,FeO,CaO,MgO,MnO,K2O,Na2O,P2O5,La,Ce,Pr,Nd,Sm,Eu,Gd,Tb,Dy,Ho,Er,Tm,Yb,Lu,Sc,V,Cr,Co,Ni,Cu,Zn,Ga,Rb,Sr,Y,Zr,Nb,Sn,Cs,Ba,Hf,Ta,Pb,Th,U,Nd143/Nd144,Sr87/Sr86,Pb206/Pb204,Pb207/Pb204, and Pb208/Pb204"
+	"cart": {
+	    "name": "decision tree",
+	    "help": "decision tree for tectonic discrimination of basalts (Vermeesch, 2006, 2007)"
 	},
 	"TiV": {
 	    "name": "Ti-V",
