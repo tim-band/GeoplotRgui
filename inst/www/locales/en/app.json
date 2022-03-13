@@ -54,6 +54,10 @@
 	    "name": "Nb-La-Yb",
 	    "help": "Discriminants for MORB, ocean island, and a variety of arc-type basalts, Hollocher et al. (2012)"
 	},
+	"NbZrY": {
+	    "name": "Nb-Zr-Y",
+	    "help": "Discriminants for discriminant for arc, MORB, and within-plate basalts, Meschede (1986)"
+	},
 	"ThNbLaYb": {
 	    "name": "Th-Nb-La-Yb",
 	    "help": "Discriminants for MORB, ocean island, and a variety of arc-type basalts, Hollocher et al. (2012)"
@@ -104,11 +108,19 @@
 	    "name": "Y",
 	    "help": "Yttrium concentrations (ppm)"
 	},
+	"nbzry_type": {
+	    "name": "Analysis type",
+	    "help": "Type of analysis; LDA, QDA or Meschede"
+	},
+	"nbzry_ternary": {
+	    "name": "Ternary plot",
+	    "help": "Produce a ternary plot, rather than a bivariate ratio plot"
+	},
 	"tiv_type": {
 	    "name": "Analysis type",
 	    "help": "Type of analysis; LDA, QDA or Shervais"
 	},
-	"tiv_plot": {
+	"tiv_ternary": {
 	    "name": "Ternary plot",
 	    "help": "Produce a ternary plot, rather than a bivariate ratio plot"
 	},
@@ -116,7 +128,7 @@
 	    "name": "Analysis type",
 	    "help": "Type of analysis; LDA, QDA or Pearce"
 	},
-	"tizry_plot": {
+	"tizry_ternary": {
 	    "name": "Ternary plot",
 	    "help": "Produce a ternary plot, rather than a bivariate logratio plot. Only applicable for LDA and QDA."
 	},
@@ -124,7 +136,7 @@
 	    "name": "Analysis type",
 	    "help": "Type of analysis; LDA, QDA, Pearce or Dilek"
 	},
-	"zrti_plot": {
+	"zrti_ternary": {
 	    "name": "Ternary plot",
 	    "help": "Produce a ternary plot, rather than a bivariate ratio plot. Only applicable for LDA and QDA."
 	},

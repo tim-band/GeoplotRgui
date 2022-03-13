@@ -110,6 +110,16 @@ functions <- list(
       ),
       optiongroups=c("plot","labels")
   ),
+  NbZrY=list(
+      params=list(
+          Nb="Nb",
+          Zr="Zr",
+          Y="Y",
+          type="nbzry_type",
+          ternary="nbzry_ternary"
+      ),
+      optiongroups=c("plot","labels")
+  ),
   QAPF=list(
       params=list(
           Q="Qtz",
@@ -158,7 +168,7 @@ functions <- list(
           V="V",
           units="tiv_units",
           type="tiv_type",
-          ternary="tiv_plot"
+          ternary="tiv_ternary"
       ),
       optiongroups=c("plot","labels")
   ),
@@ -169,7 +179,7 @@ functions <- list(
           Y="Y",
           units="tizry_units",
           type="tizry_type",
-          ternary="tizry_plot"
+          ternary="tizry_ternary"
       ),
       optiongroups=c("plot","labels")
   ),
@@ -209,7 +219,7 @@ functions <- list(
           Ti="Ti_prop",
           units="zrti_units",
           type="zrti_type",
-          ternary="zrti_plot"
+          ternary="zrti_ternary"
       ),
       optiongroups=c("plot","labels")
   )
@@ -298,18 +308,21 @@ params <- list(
   plutonic=list(type="b", data="false"),
   showlabels=list(type="b", data="true"),
   shortlabels=list(type="b", data="true"),
+  # Nb-Zr-Y
+  nbzry_type=list(type="nbzry_type", data="nbzry_type"),
+  nbzry_ternary=list(type="b", data=TRUE),
   # Ti-V
   tiv_units=list(type="subheader", data="tiv_units"),
   tiv_type=list(type="tiv_type", data="tiv_type"),
-  tiv_plot=list(type="b", data=FALSE),
+  tiv_ternary=list(type="b", data=FALSE),
   # Ti-Zr-Y
   tizry_units=list(type="subheader", data="tizry_units"),
   tizry_type=list(type="tizry_type", data="tizry_type"),
-  tizry_plot=list(type="b", data=TRUE),
+  tizry_ternary=list(type="b", data=TRUE),
   # Ti-Zr
   zrti_units=list(type="subheader", data="zrti_units"),
   zrti_type=list(type="zrti_type", data="zrti_type"),
-  zrti_plot=list(type="b", data=FALSE),
+  zrti_ternary=list(type="b", data=FALSE),
   # cart
   cart_HFS_units=list(type="subheader", data="cart_HFS_units"),
   cart_ratios_units=list(type="subheader", data="cart_ratios_units")
@@ -345,6 +358,10 @@ types <- list(
   tiv_type=list(
     kind="enum",
     values=c("LDA", "QDA", "Shervais")
+  ),
+  nbzry_type=list(
+    kind="enum",
+    values=c("LDA", "QDA", "Meschede")
   ),
   tizry_type=list(
     kind="enum",
@@ -444,6 +461,7 @@ examples <- list(
     Y_SrY=c(10),
     tiv_type="Shervais",
     tiv_units=c("wt%", "ppm"),
+    nbzry_type="Meschede",
     tizry_units=c("wt%", "ppm", "ppm"),
     tizry_type="LDA",
     zrti_units=c("ppm","wt%"),
@@ -561,6 +579,7 @@ GeoplotR <- function(host='0.0.0.0', port=NULL, daemonize=FALSE) {
       CrY = GeoplotR::CrY,
       LaYb = GeoplotR::LaYb,
       NbLaYb = GeoplotR::NbLaYb,
+      NbZrY = GeoplotR::NbZrY,
       QAPF = GeoplotR::QAPF,
       SrY = GeoplotR::SrY,
       TAS = GeoplotR::TAS,
