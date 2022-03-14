@@ -162,6 +162,16 @@ functions <- list(
       ),
       optiongroups=c("plot","labels")
   ),
+  ThTaHf=list(
+      params=list(
+          Th="Th",
+          Ta="Ta",
+          Hf="Hf",
+          type="thtahf_type",
+          ternary="thtahf_ternary"
+      ),
+      optiongroups=c("plot","labels")
+  ),
   TiV=list(
       params=list(
           Ti="Ti_prop",
@@ -315,6 +325,9 @@ params <- list(
   tiv_units=list(type="subheader", data="tiv_units"),
   tiv_type=list(type="tiv_type", data="tiv_type"),
   tiv_ternary=list(type="b", data=FALSE),
+  # Th-Ta-Hf
+  thtahf_type=list(type="thtahf_type", data="thtahf_type"),
+  thtahf_ternary=list(type="b", data=TRUE),
   # Ti-Zr-Y
   tizry_units=list(type="subheader", data="tizry_units"),
   tizry_type=list(type="tizry_type", data="tizry_type"),
@@ -358,6 +371,10 @@ types <- list(
   tiv_type=list(
     kind="enum",
     values=c("LDA", "QDA", "Shervais")
+  ),
+  thtahf_type=list(
+    kind="enum",
+    values=c("LDA", "QDA", "Wood")
   ),
   nbzry_type=list(
     kind="enum",
@@ -459,13 +476,14 @@ examples <- list(
     Yb_n=c(10),
     Sr_SrY=c(1000),
     Y_SrY=c(10),
+    thtahf_type="Wood",
     tiv_type="Shervais",
     tiv_units=c("wt%", "ppm"),
     nbzry_type="Meschede",
     tizry_units=c("wt%", "ppm", "ppm"),
-    tizry_type="LDA",
+    tizry_type="Pearce",
     zrti_units=c("ppm","wt%"),
-    zrti_type="QDA",
+    zrti_type="Pearce",
     cart_HFS_units=c("ppm"),
     cart_ratios_units=c("wt%"),
     true=TRUE,
@@ -585,6 +603,7 @@ GeoplotR <- function(host='0.0.0.0', port=NULL, daemonize=FALSE) {
       TAS = GeoplotR::TAS,
       ThCo = GeoplotR::ThCo,
       ThNbLaYb = GeoplotR::ThNbLaYb,
+      ThTaHf = GeoplotR::ThTaHf,
       TiV = TiV,
       TiZrY = TiZrY,
       cart_all = cart_all,
