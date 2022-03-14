@@ -93,25 +93,29 @@
 	"YbTaRb": {
 	    "name": "Yb-Ta-Rb",
 	    "help": "Pearce et al. (1984) Yb-Ta-Rb diagram"
+	},
+	"TiSiSr": {
+	    "name": "Ti-Si-Sr",
+	    "help": "Ti-Si-Sr diagram of Vermeesch (2006)"
+	},
+	"LuEuSr": {
+	    "name": "Lu-Eu-Sr",
+	    "help": "Lu-Eu-Sr diagram of Vermeesch (2006)"
+	},
+	"TiVSc": {
+	    "name": "Ti-V-Sc",
+	    "help": "Ti-V-Sc diagram of Vermeesch (2006)"
+	},
+	"NbNaSr": {
+	    "name": "Nb-Na-Sr",
+	    "help": "Nb-Na-Sr diagram of Vermeesch (2006)"
+	},
+	"TiSmV": {
+	    "name": "Ti-Sm-V",
+	    "help": "Ti-Sm-V diagram of Vermeesch (2006)"
 	}
     },
     "params" : {
-	"Ti": {
-	    "name": "Ti",
-	    "help": "Titanium (ppm) or TiO₂ (weight %) concentrations"
-	},
-	"V": {
-	    "name": "V",
-	    "help": "Vanadium concentrations"
-	},
-	"Zr": {
-	    "name": "Zr",
-	    "help": "Zirconium concentrations (ppm)"
-	},
-	"Y": {
-	    "name": "Y",
-	    "help": "Yttrium concentrations (ppm)"
-	},
 	"nbzry_type": {
 	    "name": "Analysis type",
 	    "help": "Type of analysis; LDA, QDA or Meschede"
@@ -151,6 +155,26 @@
 	"zrti_ternary": {
 	    "name": "Ternary plot",
 	    "help": "Produce a ternary plot, rather than a bivariate ratio plot. Only applicable for LDA and QDA."
+	},
+	"tisisr_ternary": {
+	    "name": "Ternary plot",
+	    "help": "Produce a ternary plot, rather than a bivariate ratio plot."
+	},
+	"lueusr_ternary": {
+	    "name": "Ternary plot",
+	    "help": "Produce a ternary plot, rather than a bivariate ratio plot."
+	},
+	"tivsc_ternary": {
+	    "name": "Ternary plot",
+	    "help": "Produce a ternary plot, rather than a bivariate ratio plot."
+	},
+	"nbnasr_ternary": {
+	    "name": "Ternary plot",
+	    "help": "Produce a ternary plot, rather than a bivariate ratio plot."
+	},
+	"tismv_ternary": {
+	    "name": "Ternary plot",
+	    "help": "Produce a ternary plot, rather than a bivariate ratio plot."
 	},
 	"Na2O": {
 	    "name": "Na₂O"
@@ -218,53 +242,89 @@
 	    "name": "Orthoclase",
 	    "help": "normative orthoclase concentrations (wt%)"
 	},
+	"Co": {
+	    "name": "Co",
+	    "help": "Cobalt concentrations (ppm)"
+	},
 	"Cr": {
 	    "name": "Cr",
 	    "help": "Chromium concentrations (ppm)"
 	},
-	"Th": {
-	    "name": "Th",
-	    "help": "Thorium concentrations (ppm)"
-	},
-	"Nb": {
-	    "name": "Nb",
-	    "help": "Niobium concentrations (ppm)"
+	"Eu": {
+	    "name": "Eu",
+	    "help": "Europium concentrations (ppm)"
 	},
 	"La": {
 	    "name": "La",
 	    "help": "Lathanum concentrations (ppm)"
 	},
-	"Yb": {
-	    "name": "Yb",
-	    "help": "Ytterbium concentrations (ppm)"
-	},
 	"La_n": {
 	    "name": "La",
 	    "help": "Chondritic normalised lathanum concentrations"
 	},
-	"Yb_n": {
-	    "name": "Yb",
-	    "help": "Chondritic normalised ytterbium concentrations (ppm)"
+	"Lu": {
+	    "name": "Lu",
+	    "help": "Lutetium concentrations (ppm)"
+	},
+	"Na": {
+	    "name": "Na"
+	},
+	"Nb": {
+	    "name": "Nb",
+	    "help": "Niobium concentrations (ppm)"
 	},
 	"Rb": {
 	    "name": "Rb",
 	    "help": "Rubidium concentrations (ppm)"
 	},
+	"Sc": {
+	    "name": "Sc"
+	},
+	"Si": {
+	    "name": "Si"
+	},
+	"Sm": {
+	    "name": "Sm"
+	},
+	"Sr": {
+	    "name": "Sr",
+	    "help": "Strontium concentrations (ppm)"
+	},
 	"Ta": {
 	    "name": "Ta",
 	    "help": "Tantalum concentrations (ppm)"
 	},
-	"Sr": {
-	    "name": "Sr",
-	    "help": "Strontiumium concentrations (ppm)"
+	"Th": {
+	    "name": "Th",
+	    "help": "Thorium concentrations (ppm)"
+	},
+	"Ti": {
+	    "name": "Ti",
+	    "help": "Titanium (ppm) or TiO₂ (weight %) concentrations"
+	},
+	"V": {
+	    "name": "V",
+	    "help": "Vanadium concentrations"
+	},
+	"Y": {
+	    "name": "Y",
+	    "help": "Yttrium concentrations (ppm)"
 	},
 	"Y_SrY": {
 	    "name": "Y",
 	    "help": "Yttrium concentrations (ppm)"
 	},
-	"Co": {
-	    "name": "Co",
-	    "help": "Cobalt concentrations (ppm)"
+	"Yb": {
+	    "name": "Yb",
+	    "help": "Ytterbium concentrations (ppm)"
+	},
+	"Yb_n": {
+	    "name": "Yb",
+	    "help": "Chondritic normalised ytterbium concentrations (ppm)"
+	},
+	"Zr": {
+	    "name": "Zr",
+	    "help": "Zirconium concentrations (ppm)"
 	},
 	"NdNd": {
 	    "name": "¹⁴³Nd/¹⁴⁴Nd"

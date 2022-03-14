@@ -172,6 +172,55 @@ functions <- list(
       ),
       optiongroups=c("plot","labels")
   ),
+  TiSiSr=list(
+      params=list(
+          Ti="Ti_prop",
+          Si="Si_prop",
+          Sr="Sr",
+          units="tisisr_units",
+          ternary="tisisr_ternary"
+      ),
+      optiongroups=c("plot","labels")
+  ),
+  LuEuSr=list(
+      params=list(
+          Lu="Lu",
+          Eu="Eu",
+          Sr="Sr",
+          ternary="lueusr_ternary"
+      ),
+      optiongroups=c("plot","labels")
+  ),
+  TiVSc=list(
+      params=list(
+          Ti="Ti_prop",
+          V="V",
+          Sc="Sc",
+          units="tivsc_units",
+          ternary="tivsc_ternary"
+      ),
+      optiongroups=c("plot","labels")
+  ),
+  NbNaSr=list(
+      params=list(
+          Nb="Nb",
+          Na="Na_prop",
+          Sr="Sc",
+          units="nbnasr_units",
+          ternary="nbnasr_ternary"
+      ),
+      optiongroups=c("plot","labels")
+  ),
+  TiSmV=list(
+      params=list(
+          Ti="Ti_prop",
+          Sm="Sm",
+          V="V",
+          units="tismv_units",
+          ternary="tismv_ternary"
+      ),
+      optiongroups=c("plot","labels")      
+  ),
   TiV=list(
       params=list(
           Ti="Ti_prop",
@@ -289,6 +338,8 @@ params <- list(
   Pb84=list(type="floatCol", data="Pb84"),
   # for Ti-V and Ti-Zr
   Ti_prop=list(type="proportionCol_TiO2", data="Ti_prop"),
+  Si_prop=list(type="proportionCol_SiO2", data="Si_prop"),
+  Na_prop=list(type="proportionCol_Na2O", data="Na_prop"),
   # AFM/ATM
   A=list(type="floatCol", data="A"),
   F=list(type="floatCol", data="F"),
@@ -336,6 +387,16 @@ params <- list(
   zrti_units=list(type="subheader", data="zrti_units"),
   zrti_type=list(type="zrti_type", data="zrti_type"),
   zrti_ternary=list(type="b", data=FALSE),
+  # Vermeesch (2006)
+  tisisr_units=list(type="subheader",data="tisisr_units"),
+  tisisr_ternary=list(type="b", data=FALSE),
+  tivsc_units=list(type="subheader",data="tivsc_units"),
+  tivsc_ternary=list(type="b", data=FALSE),
+  nbnasr_units=list(type="subheader",data="nbnasr_units"),
+  nbnasr_ternary=list(type="b", data=FALSE),
+  tismv_units=list(type="subheader",data="tismv_units"),
+  tismv_ternary=list(type="b", data=FALSE),
+  lueusr_ternary=list(type="b", data=FALSE),
   # cart
   cart_HFS_units=list(type="subheader", data="cart_HFS_units"),
   cart_ratios_units=list(type="subheader", data="cart_ratios_units")
@@ -402,6 +463,26 @@ types <- list(
     values=c("wt%", "ppm"),
     factors=c(1, GeoplotR::wtpct2ppm(1, 'TiO2'))
   ),
+  proportionCol_SiO2=list(
+    kind="column",
+    subtype="f",
+    unittype="proportion_SiO2"
+  ),
+  proportion_SiO2=list(
+    kind="enum",
+    values=c("wt%", "ppm"),
+    factors=c(1, GeoplotR::wtpct2ppm(1, 'SiO2'))
+  ),
+  proportionCol_Na2O=list(
+    kind="column",
+    subtype="f",
+    unittype="proportion_Na2O"
+  ),
+  proportion_Na2O=list(
+    kind="enum",
+    values=c("wt%", "ppm"),
+    factors=c(1, GeoplotR::wtpct2ppm(1, 'Na2O'))
+  ),
   bandwidth=list(
     kind="enum",
     values=c("nrd0", "nrd", "ucv", "bcv", "SJ")
@@ -456,6 +537,8 @@ examples <- list(
     Th=getColumn("Th"),
     U=getColumn("U"),
     Ti_prop=getColumn("TiO2"),
+    Si_prop=getColumn("SiO2"),
+    Na_prop=getColumn("Na2O"),
     NdNd=getColumn("Nd143/Nd144"),
     SrSr=getColumn("Sr87/Sr86"),
     Pb64=getColumn("Pb206/Pb204"),
@@ -484,6 +567,10 @@ examples <- list(
     tizry_type="Pearce",
     zrti_units=c("ppm","wt%"),
     zrti_type="Pearce",
+    tisisr_units=c("wt%","wt%","ppm"),
+    tivsc_units=c("wt%","ppm","ppm"),
+    nbnasr_units=c("ppm","wt%","ppm"),
+    tismv_units=c("wt%","ppm","ppm"),
     cart_HFS_units=c("ppm"),
     cart_ratios_units=c("wt%"),
     true=TRUE,
@@ -508,6 +595,33 @@ TiZrY <- function(Ti, Zr, Y, units, ...) {
     Y <- GeoplotR::wtpct2ppm(Y, "Y2O3")
   }
   GeoplotR::TiZrY(Ti, Zr, Y, ...)
+}
+TiSiSr <- function(Ti, Si, Sr, units, ...){
+  if (units[[1]] == "wt%") {
+    Ti <- GeoplotR::wtpct2ppm(Ti, "TiO2")
+  }
+  if (units[[2]] == "wt%") {
+    Si <- GeoplotR::wtpct2ppm(Si, "SiO2")
+  }
+  GeoplotR::TiSiSr(Ti, Si, Sr, ...)
+}
+TiVSc <- function(Ti, V, Sc, units, ...){
+  if (units[[1]] == "wt%") {
+    Ti <- GeoplotR::wtpct2ppm(Ti, "TiO2")
+  }
+  GeoplotR::TiVSc(Ti, V, Sc, ...)
+}
+NbNaSr <- function(Nb, Na, Sr, units, ...){
+  if (units[[2]] == "wt%") {
+    Na <- GeoplotR::wtpct2ppm(Na, "Na2O")
+  }
+  GeoplotR::NbNaSr(Nb, Na, Sr, ...)
+}
+TiSmV <- function(Ti, Sm, V, units, ...){
+  if (units[[1]] == "wt%") {
+    Ti <- GeoplotR::wtpct2ppm(Ti, "TiO2")
+  }
+  GeoplotR::TiSmV(Ti, Sm, V, ...)
 }
 
 cart_all <- function(SiO2,TiO2,Al2O3,Fe2O3,FeO,CaO,MgO,
@@ -596,7 +710,9 @@ GeoplotR <- function(host='0.0.0.0', port=NULL, daemonize=FALSE) {
       ATM = GeoplotR::ATM,
       CrY = GeoplotR::CrY,
       LaYb = GeoplotR::LaYb,
+      LuEuSr = GeoplotR::LuEuSr,
       NbLaYb = GeoplotR::NbLaYb,
+      NbNaSr = NbNaSr,
       NbZrY = GeoplotR::NbZrY,
       QAPF = GeoplotR::QAPF,
       SrY = GeoplotR::SrY,
@@ -604,7 +720,10 @@ GeoplotR <- function(host='0.0.0.0', port=NULL, daemonize=FALSE) {
       ThCo = GeoplotR::ThCo,
       ThNbLaYb = GeoplotR::ThNbLaYb,
       ThTaHf = GeoplotR::ThTaHf,
+      TiSiSr = TiSiSr,
+      TiSmV = TiSmV,
       TiV = TiV,
+      TiVSc = TiVSc,
       TiZrY = TiZrY,
       cart_all = cart_all,
       cart_HFS = cart_HFS,
