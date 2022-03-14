@@ -389,14 +389,14 @@ params <- list(
   zrti_ternary=list(type="b", data=FALSE),
   # Vermeesch (2006)
   tisisr_units=list(type="subheader",data="tisisr_units"),
-  tisisr_ternary=list(type="b", data=FALSE),
+  tisisr_ternary=list(type="b", data=TRUE),
   tivsc_units=list(type="subheader",data="tivsc_units"),
-  tivsc_ternary=list(type="b", data=FALSE),
+  tivsc_ternary=list(type="b", data=TRUE),
   nbnasr_units=list(type="subheader",data="nbnasr_units"),
-  nbnasr_ternary=list(type="b", data=FALSE),
+  nbnasr_ternary=list(type="b", data=TRUE),
   tismv_units=list(type="subheader",data="tismv_units"),
-  tismv_ternary=list(type="b", data=FALSE),
-  lueusr_ternary=list(type="b", data=FALSE),
+  tismv_ternary=list(type="b", data=TRUE),
+  lueusr_ternary=list(type="b", data=TRUE),
   # cart
   cart_HFS_units=list(type="subheader", data="cart_HFS_units"),
   cart_ratios_units=list(type="subheader", data="cart_ratios_units")
