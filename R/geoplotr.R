@@ -201,6 +201,16 @@ functions <- list(
       ),
       optiongroups=c("plot","labels")
   ),
+  TiZrYSr=list(
+      params=list(
+          Ti="Ti_prop",
+          Zr="Zr",
+          Y="Y",
+          Sr="Sr",
+          units="tizrysr_units"
+      ),
+      optiongroups=c("plot","labels")
+  ),
   NbNaSr=list(
       params=list(
           Nb="Nb",
@@ -397,6 +407,7 @@ params <- list(
   tismv_units=list(type="subheader",data="tismv_units"),
   tismv_ternary=list(type="b", data=TRUE),
   lueusr_ternary=list(type="b", data=TRUE),
+  tizrysr_units=list(type="subheader",data="tizrysr_units"),
   # cart
   cart_HFS_units=list(type="subheader", data="cart_HFS_units"),
   cart_ratios_units=list(type="subheader", data="cart_ratios_units")
@@ -561,9 +572,9 @@ examples <- list(
     Y_SrY=c(10),
     thtahf_type="Wood",
     tiv_type="Shervais",
-    tiv_units=c("wt%", "ppm"),
+    tiv_units=c("wt%","ppm"),
     nbzry_type="Meschede",
-    tizry_units=c("wt%", "ppm", "ppm"),
+    tizry_units=c("wt%","ppm","ppm"),
     tizry_type="Pearce",
     zrti_units=c("ppm","wt%"),
     zrti_type="Pearce",
@@ -571,6 +582,7 @@ examples <- list(
     tivsc_units=c("wt%","ppm","ppm"),
     nbnasr_units=c("ppm","wt%","ppm"),
     tismv_units=c("wt%","ppm","ppm"),
+    tizrysr_units=c("wt%","ppm","ppm","ppm"),
     cart_HFS_units=c("ppm"),
     cart_ratios_units=c("wt%"),
     true=TRUE,
@@ -595,6 +607,12 @@ TiZrY <- function(Ti, Zr, Y, units, ...) {
     Y <- GeoplotR::wtpct2ppm(Y, "Y2O3")
   }
   GeoplotR::TiZrY(Ti, Zr, Y, ...)
+}
+TiZrYSr <- function(Ti, Zr, Y, Sr, units, ...) {
+  if (units[[1]] == "wt%") {
+    Ti <- GeoplotR::wtpct2ppm(Ti, "TiO2")
+  }
+  GeoplotR::TiZrYSr(Ti, Zr, Y, Sr, ...)
 }
 TiSiSr <- function(Ti, Si, Sr, units, ...){
   if (units[[1]] == "wt%") {
@@ -725,6 +743,7 @@ GeoplotR <- function(host='0.0.0.0', port=NULL, daemonize=FALSE) {
       TiV = TiV,
       TiVSc = TiVSc,
       TiZrY = TiZrY,
+      TiZrYSr = TiZrYSr,
       cart_all = cart_all,
       cart_HFS = cart_HFS,
       cart_ratios = cart_ratios,

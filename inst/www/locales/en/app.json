@@ -16,15 +16,19 @@
 	},
 	"ThTaHf": {
 	    "name": "Th-Ta-Hf",
-	    "help": "Th-Ta-Hf tectonic discrimination diagram"
+	    "help": "The Th-Ta-Hf tectonic discrimination diagram of Wood (1980)"
 	},
 	"TiV": {
 	    "name": "Ti-V",
-	    "help": "Ti-V tectonic discrimination diagram"
+	    "help": "The Ti-V tectonic discrimination diagram of Shervais (1982)"
 	},
 	"TiZrY": {
 	    "name": "Ti-Zr-Y",
-	    "help": "Ti-Zr-Y tectonic discrimination diagram"
+	    "help": "The Ti-Zr-Y tectonic discrimination diagram of Pearce and Cann (1973)"
+	},
+	"TiZrYSr": {
+	    "name": "Ti-Zr-Y-Sr",
+	    "help": "The Ti-Zr-Y-Sr tectonic discrimination diagram of Vermeesch (2006)"
 	},
 	"ZrTi": {
 	    "name": "Zr-Ti",
@@ -80,39 +84,39 @@
 	},
 	"YNb": {
 	    "name": "Y-Nb",
-	    "help": "Pearce et al. (1984) Y-Nb diagram"
+	    "help": "The Y-Nb diagram of Pearce et al. (1984)"
 	},
 	"YNbRb": {
 	    "name": "Y-Nb-Rb",
-	    "help": "Pearce et al. (1984) Y-Nb-Rb diagram"
+	    "help": "The Y-Nb-Rb diagram of Pearce et al. (1984)"
 	},
 	"YbTa": {
 	    "name": "Yb-Ta",
-	    "help": "Pearce et al. (1984) Yb-Ta diagram"
+	    "help": "The Yb-Ta diagram of Pearce et al. (1984)"
 	},
 	"YbTaRb": {
 	    "name": "Yb-Ta-Rb",
-	    "help": "Pearce et al. (1984) Yb-Ta-Rb diagram"
+	    "help": "The Yb-Ta-Rb diagram of Pearce et al. (1984)"
 	},
 	"TiSiSr": {
 	    "name": "Ti-Si-Sr",
-	    "help": "Ti-Si-Sr diagram of Vermeesch (2006)"
+	    "help": "The Ti-Si-Sr diagram of Vermeesch (2006)"
 	},
 	"LuEuSr": {
 	    "name": "Lu-Eu-Sr",
-	    "help": "Lu-Eu-Sr diagram of Vermeesch (2006)"
+	    "help": "The Lu-Eu-Sr diagram of Vermeesch (2006)"
 	},
 	"TiVSc": {
 	    "name": "Ti-V-Sc",
-	    "help": "Ti-V-Sc diagram of Vermeesch (2006)"
+	    "help": "The Ti-V-Sc diagram of Vermeesch (2006)"
 	},
 	"NbNaSr": {
 	    "name": "Nb-Na-Sr",
-	    "help": "Nb-Na-Sr diagram of Vermeesch (2006)"
+	    "help": "The Nb-Na-Sr diagram of Vermeesch (2006)"
 	},
 	"TiSmV": {
 	    "name": "Ti-Sm-V",
-	    "help": "Ti-Sm-V diagram of Vermeesch (2006)"
+	    "help": "The Ti-Sm-V diagram of Vermeesch (2006)"
 	}
     },
     "params" : {
