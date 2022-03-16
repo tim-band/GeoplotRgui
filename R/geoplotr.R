@@ -211,6 +211,19 @@ functions <- list(
       ),
       optiongroups=c("plot","labels")
   ),
+  Pearce1976=list(
+      params=list(
+          SiO2="SiO2",
+          Al2O3="Al2O3",
+          TiO2="TiO2",
+          CaO="CaO",
+          MgO="MgO",
+          MnO="MnO",
+          K2O="K2O",
+          Na2O="Na2O"
+      ),
+      optiongroups=c("plot","labels")
+  ),
   NbNaSr=list(
       params=list(
           Nb="Nb",
@@ -590,6 +603,10 @@ examples <- list(
     bandwidth="nrd0"
 )
 
+Pearce1976 <- function(SiO2,Al2O3,TiO2,CaO,MgO,MnO,K2O,Na2O, ...) {
+  major <- data.frame(SiO2,Al2O3,TiO2,CaO,MgO,MnO,K2O,Na2O)
+  GeoplotR::Pearce1976(major, ...)
+}
 TiV <- function(Ti, V, units, ...) {
   if (units[[1]] == "wt%") {
     Ti <- GeoplotR::wtpct2ppm(Ti, "TiO2")
@@ -732,6 +749,7 @@ GeoplotR <- function(host='0.0.0.0', port=NULL, daemonize=FALSE) {
       NbLaYb = GeoplotR::NbLaYb,
       NbNaSr = NbNaSr,
       NbZrY = GeoplotR::NbZrY,
+      Pearce1976 = Pearce1976,
       QAPF = GeoplotR::QAPF,
       SrY = GeoplotR::SrY,
       TAS = GeoplotR::TAS,

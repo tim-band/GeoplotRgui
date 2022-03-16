@@ -30,6 +30,10 @@
 	    "name": "Ti-Zr-Y-Sr",
 	    "help": "The Ti-Zr-Y-Sr tectonic discrimination diagram of Vermeesch (2006)"
 	},
+	"Pearce1976": {
+	    "name": "Pearce (1976)",
+	    "help": "Linear descriminant analysis of oceanic basalts by Pearce (1976), but without Fe2O3, and recast in a logratio form by Vermeesch (2006)"
+	},
 	"ZrTi": {
 	    "name": "Zr-Ti",
 	    "help": "The Zr vs. Ti and Ti vs. Zr basalt discrimination diagrams of Pearce and Cann (1973), and Dilek and Furnes (2009), respectively."
@@ -180,12 +184,6 @@
 	    "name": "Ternary plot",
 	    "help": "Produce a ternary plot, rather than a bivariate ratio plot."
 	},
-	"Na2O": {
-	    "name": "Na₂O"
-	},
-	"K2O": {
-	    "name": "K₂O"
-	},
 	"SiO2": {
 	    "name": "SiO₂"
 	},
@@ -194,6 +192,21 @@
 	},
 	"Fe2O3": {
 	    "name": "Fe₂O₃"
+	},
+	"MnO": {
+	    "name": "MnO"
+	},
+	"MgO": {
+	    "name": "MgO"
+	},
+	"CaO": {
+	    "name": "CaO"
+	},
+	"Na2O": {
+	    "name": "Na₂O"
+	},
+	"K2O": {
+	    "name": "K₂O"
 	},
 	"P2O5": {
 	    "name": "P₂O₅"
