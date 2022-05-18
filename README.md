@@ -46,7 +46,7 @@ With a Debian-based Linux distribution (such as Ubuntu) you
 can use our installer to set up IsoplotR quickly and easily.
 
 ```sh
-sudo apt install geoplotr_1.0-1.deb
+sudo apt install geoplotr.deb
 ```
 
 Now please skip to the **Configuring GeoplotR** section
@@ -103,10 +103,10 @@ sudo -Hu wwwrunner Rscript -e \
 
 ### Create a systemd service for *GeoplotR*
 
-Copy the file `geoplotr_1.0-1/etc/systemd/system/geoplotr@.service` into
+Copy the file `geoplotr/etc/systemd/system/geoplotr@.service` into
 `/etc/systemd/system/`.
 
-Copy all the files in `geoplotr_1.0-1/usr/local/sbin/` into
+Copy all the files in `geoplotr/usr/local/sbin/` into
 `/usr/local/sbin/`. `geoplotrctl` is your script for interacting with the
 **geoplotr** service; you can start it with:
 
@@ -122,8 +122,8 @@ Instead of `start`, you can also use the following verbs:
 
 ### Expose *GeoplotR* with *nginx*
 
-Copy the file `geoplotr_1.0-1/etc/nginx/app.d/geoplotr.conf` into
-`/etc/nginx/app.d/` and `geoplotr_1.0-1/etc/nginx/conf.d/geoplotr.conf`
+Copy the file `geoplotr/etc/nginx/app.d/geoplotr.conf` into
+`/etc/nginx/app.d/` and `geoplotr/etc/nginx/conf.d/geoplotr.conf`
 into `/etc/nginx/conf.d/`. Now restart *nginx* with:
 
 ```sh
@@ -140,7 +140,7 @@ If not, see the **Configuring GeoplotR** section below.
 To ensure that **GeoplotR** is up-to-date, it is a good idea to set up
 auto-updating.
 
-Copy the file `geoplotr_1.0-1/etc/cron.weekly/geoplotr` into
+Copy the file `geoplotr/etc/cron.weekly/geoplotr` into
 `/etc/cron.weekly/`. This sets up the updating script to run every
 week (normally Sunday morning). You can run it yourself at any
 time with:
