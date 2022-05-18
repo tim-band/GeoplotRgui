@@ -21,7 +21,7 @@ server object, unless daemonize is TRUE.
 }
 \description{
 Opens a web-browser with a Graphical User Interface (GUI) for the
-\code{IsoplotR} package.
+\code{GeoplotR} package.
 }
 \examples{
 \dontrun{

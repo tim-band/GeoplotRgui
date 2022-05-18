@@ -1,0 +1,12 @@
+[Unit]
+Description=geoplotr
+After=network.target
+
+[Service]
+Type=simple
+User=wwwrunner
+ExecStart=/usr/bin/Rscript -e "GeoplotRgui::GeoplotR(host='127.0.0.1', port=%i, daemonize=TRUE)"
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,7 @@
+start=39301
+end=39301
+cmd=$1
+shift
+for p in $(seq ${start} ${end})
+do systemctl --no-pager ${cmd} geoplotr@${p} $@
+done

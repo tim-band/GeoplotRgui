@@ -716,7 +716,7 @@ ZrTi <- function(Zr, Ti, units, ...) {
 #' Starts the \code{GeoplotR} GUI
 #'
 #' Opens a web-browser with a Graphical User Interface (GUI) for the
-#' \code{IsoplotR} package.
+#' \code{GeoplotR} package.
 #' @param host IP address to listen on, default is 0.0.0.0 (all interfaces)
 #' @param port Internet port of the virtual server. If not defined, a
 #' random free port will be chosen and the browser will be opened

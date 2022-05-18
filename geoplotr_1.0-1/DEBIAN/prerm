@@ -1,0 +1,3 @@
+#! /bin/sh
+/usr/local/sbin/geoplotrctl stop
+/usr/local/sbin/geoplotrctl disable
