@@ -1,2 +1,3 @@
 sudo -Hu wwwrunner Rscript -e "remotes::install_github(repo=c('pvermees/GeoplotR','pvermees/GeoplotRgui'),force=TRUE,lib='~/R')"
-/usr/local/sbin/geoplotrctl restart
+# We use sudo here so that the user only gets asked for a password once
+sudo /usr/local/sbin/geoplotrctl restart
