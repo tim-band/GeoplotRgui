@@ -46,8 +46,11 @@ With a Debian-based Linux distribution (such as Ubuntu) you
 can use our installer to set up IsoplotR quickly and easily.
 
 ```sh
-sudo apt install geoplotr.deb
+sudo apt install ./geoplotr.deb
 ```
+
+If you want to uninstall it, you can with `sudo apt remove geoplotr`.
+You can rebuild the `.deb` file with `dpkg-deb --build geoplotr`
 
 Now please skip to the **Configuring GeoplotR** section
 
