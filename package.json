@@ -4,6 +4,8 @@
     "private": true,
     "scripts": {
         "server": "Rscript --vanilla build/start-gui.R 127.0.0.1:50056",
+        "deb": "dpkg-deb --build geoplotr",
+        "install": "Rscript -e 'install.packages(\".\",repos=NULL)'",
         "test": "mocha test"
     },
     "devDependencies": {

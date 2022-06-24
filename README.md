@@ -2,6 +2,15 @@
 
 Run GeoplotR from a web browser.
 
+## Build
+
+| Thing to build | Command |
+| --- | --- |
+| `.deb` installer file | `npm run deb` |
+| Install as R package | `npm install` |
+| create R package | `cd .. ; R CMD build GeoplotRgui` |
+| start a server on port 50056 | `npm run server` |
+
 ## Deployment
 
 ### Deployment with Docker
