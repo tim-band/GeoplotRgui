@@ -2,6 +2,14 @@
   "title": "GeoplotR",
   "homelink": "https://github.com/pvermees/GeoplotR",
     "functions": {
+        "trees": {
+            "name": "Trees",
+            "help": "Functions resulting in decision tree plots"
+		},
+        "others": {
+            "name": "Others",
+            "help": "Functions that don't result in decision tree plots"
+		},
 	"cart_all": {
 	    "name": "CART (all)",
 	    "help": "decision tree for tectonic discrimination of basalts using major elements, trace elements, and isotopic ratios (Vermeesch, 2006)"
